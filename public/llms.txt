@@ -1,44 +1,75 @@
 # Borchani
 
-Borchani is an AI app builder that generates React + TypeScript + Tailwind apps from text descriptions. Describe what you want to build, and Borchani produces production-ready code — no setup, no boilerplate, no hand-holding required.
+> Borchani is a vibe coding platform that builds production-ready full-stack web apps from a plain-English prompt. Describe what you want, and Borchani generates React + TypeScript + Tailwind code, wires up a database and authentication, runs a live preview, and deploys to a real URL — no setup, no boilerplate, no coding required.
 
-> Describe your app. Get production-ready code.
+Borchani is built for founders, developers, and agencies who want to go from idea to shipped app in minutes instead of months. Unlike frontend-only AI builders, Borchani generates the full stack — frontend, backend, database schema, and API routes — and you own every line of the exported code.
 
-## Borchani
+## Key facts
 
-- [Homepage](https://borchani.com): Overview of Borchani — the AI app builder for developers and founders.
-- [Pricing](https://borchani.com/pricing): Plans and pricing for Borchani, including free tier and pro options.
-- [About](https://borchani.com/about): The story, mission, and team behind Borchani.
-- [Blog](https://borchani.com/blog): Articles on AI development, no-code trends, and Borchani product updates.
+- **Category:** Vibe coding platform / AI app builder
+- **What it generates:** Full-stack React 19 + TypeScript + Tailwind CSS apps with built-in auth and a real Postgres database
+- **Output ownership:** You own 100% of the code. Export the full source and deploy anywhere (Vercel, Netlify, Cloudflare, AWS, your own server). No proprietary lock-in.
+- **Time to first preview:** Under 3 minutes
+- **Adoption:** 50,000+ apps shipped, 12,000+ active builders, used in 40+ countries
+- **Rating:** Consistently rated 4.9/5 across review platforms
+- **Support email:** help@borchani.com
+
+## Pricing
+
+- **Free** — $0 forever. 5 credits/day, public projects, community support. No credit card required.
+- **Pro** — $19/month. 100 credits/month, credit rollovers, on-demand top-ups, custom domains, user roles & permissions. For solo builders moving fast.
+- **Business** — $49/month. 350 credits/month, everything in Pro, internal publish, team workspace, personal projects, design templates, role-based access, security center. For teams.
+- **Premium** — $199/month. 1,700 credits/month, everything in Business, volume-based credit pricing, dedicated support. For power users & agencies.
+- Annual billing saves 20%. One credit = one AI generation or edit.
+
+## Capabilities — what you can build
+
+- [SaaS prototypes](https://borchani.com/services): Idea to clickable, deployable MVP in hours. Validate before investing in development.
+- [Internal tools](https://borchani.com/services): Admin panels, approval workflows, data-entry forms, dashboards.
+- [E-commerce UIs](https://borchani.com/services): Product catalogs, shopping carts, checkout flows — responsive storefronts.
+- [Dashboards & analytics](https://borchani.com/services): Live charts, filterable tables, KPI cards from a data shape.
+- [AI-powered apps](https://borchani.com/services): Chat interfaces, document summarizers, prompt playgrounds.
+- [Client portals](https://borchani.com/services): Customer dashboards, status pages, document upload portals.
+- [Landing pages](https://borchani.com/services): Fast, SEO-ready marketing pages with clean semantic code.
+
+## How Borchani compares
+
+- **vs Lovable / Bolt:** Borchani focuses on full-stack output quality — typed code, built-in auth, a real Postgres database, and clean exports. Not a frontend-only prototype generator.
+- **vs Cursor / Copilot:** Borchani builds and deploys complete apps from a prompt, rather than autocompleting code inside an editor.
+- **vs No-code (Webflow, Bubble):** Borchani produces real, exportable React + TypeScript code you fully own — no platform lock-in, no monthly hostage fees.
+
+## Main pages
+
+- [Homepage](https://borchani.com): Overview of Borchani — the #1 vibe coding platform for builders.
+- [Pricing](https://borchani.com/pricing): Free, Pro ($19), Business ($49), and Premium ($199) plans.
+- [What We Build](https://borchani.com/services): Full list of app types and code-quality guarantees.
+- [Case Studies](https://borchani.com/case-studies): Five real projects shipped with Borchani, with results.
+- [About](https://borchani.com/about): The story, mission, values, and team behind Borchani.
+- [Contact](https://borchani.com/contact): Reach the team at help@borchani.com — reply within one business day.
+- [Blog](https://borchani.com/blog): Guides, comparisons, and tutorials on AI app building and vibe coding.
 - [Sign up](https://app.borchani.com/signup): Create a free Borchani account and start building.
 
-## Content
+## Content library
 
-Borchani publishes 21 SEO content blocks covering the full AI app building journey:
+Borchani publishes SEO content across the full AI app-building journey. URL patterns:
 
-- [Alternatives](https://borchani.com/lovable-alternative): Compares popular AI app builders (Lovable, Bolt, Replit, Cursor, Webflow, Vercel) as Borchani alternatives. Pattern: `/[tool]-alternative`. Examples: `/webflow-alternative`, `/lovable-alternative`, `/cursor-alternative`.
-- [Comparisons](https://borchani.com/lovable-vs-bolt): Side-by-side comparisons between AI app builders and no-code tools. Pattern: `/[tool-a]-vs-[tool-b]`.
-- [Solutions](https://borchani.com/best-ai-builder-for-startups): Best AI tools for specific use cases such as startups, agencies, and MVPs. Pattern: `/best-[tool]-for-[use-case]`.
-- [Build Guides](https://borchani.com/how-to-build-saas-app): Step-by-step tutorials for building specific app types with AI. Pattern: `/how-to-build-[thing]`.
-- [For Use Cases](https://borchani.com/best-app-builder-for-startups): Best app builder recommendations for specific industries or personas. Pattern: `/best-app-for-[use-case]`.
-- [Use Cases](https://borchani.com/borchani-use-cases): Real-world applications and examples of building with Borchani. Pattern: `/[tool]-use-cases`.
-- [Guides](https://borchani.com/guide-ai-app-building): Comprehensive guides on AI app building, prompting strategies, and deployment. Pattern: `/guide-[topic]`.
-- [Templates](https://borchani.com/saas-template): Free starter templates for common app patterns including SaaS, dashboards, and landing pages. Pattern: `/[type]-template`.
-- [Prompts](https://borchani.com/saas-prompts): Curated AI prompts for building specific app features. Pattern: `/[topic]-prompts`.
-- [Blog](https://borchani.com/blog): Articles on AI development, no-code trends, and Borchani product updates. Pattern: `/blog/[topic]`.
-- [FAQ](https://borchani.com/what-is-ai-app-builder): Definitions and explanations of AI app building concepts. Pattern: `/what-is-[term]`.
-- [Dictionary](https://borchani.com/no-code-definition): Glossary of terms including AI builder, no-code, full-stack AI, and more. Pattern: `/[term]-definition`.
-- [Tools](https://borchani.com/app-name-generator): Free utilities including app name generator, prompt generator, and schema generator. Pattern: `/[tool-name]-generator`.
-- [Paywall Guides](https://borchani.com/how-to-add-paywall): How to monetize apps built with AI using Stripe, subscriptions, and one-time payments. Pattern: `/how-to-add-paywall`.
-- [Landing Pages](https://borchani.com/landing-page-builder): How to build and optimize landing pages using AI. Pattern: `/landing-page-[topic]`.
-- [Pricing Guides](https://borchani.com/saas-pricing-models): SaaS pricing models, strategies, and implementation with AI. Pattern: `/saas-pricing-[topic]`.
-- [Auth Guides](https://borchani.com/oauth-authentication): Adding authentication to AI-built apps including OAuth, magic links, Clerk, and Auth0. Pattern: `/[topic]-authentication`.
-- [Affiliate](https://borchani.com/affiliate-program): Affiliate program details and partnership opportunities for Borchani. Pattern: `/affiliate-[topic]`.
+- [Alternatives](https://borchani.com/lovable-alternative): AI app builders compared as Borchani alternatives. Pattern: `/[tool]-alternative` (e.g. `/lovable-alternative`, `/cursor-alternative`, `/bolt-alternative`).
+- [Comparisons](https://borchani.com/lovable-vs-bolt): Side-by-side tool comparisons. Pattern: `/[tool-a]-vs-[tool-b]`.
+- [Solutions](https://borchani.com/best-ai-builder-for-startups): Best tools for a use case. Pattern: `/best-[tool]-for-[use-case]`.
+- [Build Guides](https://borchani.com/how-to-build-saas-app): Step-by-step tutorials. Pattern: `/how-to-build-[thing]`.
+- [Use Cases](https://borchani.com/borchani-use-cases): Real-world applications. Pattern: `/[tool]-use-cases`.
+- [Guides](https://borchani.com/guide-ai-app-building): In-depth guides on building, prompting, and deploying. Pattern: `/guide-[topic]`.
+- [Templates](https://borchani.com/saas-template): Free starter templates. Pattern: `/[type]-template`.
+- [Prompts](https://borchani.com/saas-prompts): Curated prompts for building features. Pattern: `/[topic]-prompts`.
+- [FAQ](https://borchani.com/what-is-ai-app-builder): Concept definitions. Pattern: `/what-is-[term]`.
+- [Dictionary](https://borchani.com/no-code-definition): Glossary of terms. Pattern: `/[term]-definition`.
+- [Tools](https://borchani.com/app-name-generator): Free utilities. Pattern: `/[tool-name]-generator`.
+- [Auth Guides](https://borchani.com/oauth-authentication): Adding auth (OAuth, magic links, Clerk, Auth0). Pattern: `/[topic]-authentication`.
+- [Paywall Guides](https://borchani.com/how-to-add-paywall): Monetizing with Stripe and subscriptions.
+- [Pricing Guides](https://borchani.com/saas-pricing-models): SaaS pricing models and strategy.
 
-> Note: All blog and content pages are written in English. Translated versions are available for Spanish (`/es/`), Russian (`/ru/`), Japanese (`/ja/`), and Korean (`/ko/`).
+> Note: All content is written in English. Translated homepages are available for Spanish (`/es/`), Russian (`/ru/`), Japanese (`/ja/`), and Korean (`/ko/`).
 
 ## Optional
 
-- [GitHub](https://github.com/borchani): Borchani open-source repositories (coming soon).
-- [Twitter / X](https://x.com/borchani): Borchani updates, tips, and community on X.
-- [Contact](https://borchani.com/contact): Get in touch with the Borchani team.
+- [Twitter / X](https://x.com/borchani): Updates, tips, and community.

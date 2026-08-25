@@ -1,0 +1,116 @@
+---
+publishDate: 2025-04-02T00:00:00Z
+updateDate: 2026-06-12T00:00:00Z
+title: "Borchani Tech Stack: What Your AI App Is Built With"
+excerpt: "A deep look at the exact tech stack Borchani generates — React 19, TypeScript, Tailwind, shadcn/ui, Postgres, and auth — and why each choice means clean, ownable code."
+image: https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80
+category: Guides
+tags:
+  - tech stack
+  - react
+  - typescript
+  - borchani
+author: "Zhassulan Baigozha"
+metadata:
+  canonical: https://borchani.com/borchani-tech-stack-explained
+  robots:
+    index: true
+    follow: true
+  description: "The full tech stack behind every Borchani app: React 19, TypeScript, Tailwind, shadcn/ui, Postgres, and auth — explained, and why it stays clean and ownable."
+  openGraph:
+    type: article
+    images:
+      - url: https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80
+        width: 1200
+        height: 630
+---
+
+When you build an app with Borchani, you are not getting a black box. You get a real codebase on a modern, well-understood stack — the same stack a senior engineer would pick for a new production project in 2026. This page documents exactly what Borchani generates under the hood, and why each piece was chosen.
+
+> **TL;DR**
+> - Every Borchani app is **React 19 + TypeScript + Tailwind CSS**, with **shadcn/ui** components pre-wired.
+> - The backend ships with a real **Postgres** database and **authentication** already configured — no third-party setup.
+> - You **own 100% of the code**. Export it, read it, change it, and deploy it anywhere. No proprietary runtime, no lock-in.
+
+## The frontend: React 19 + TypeScript
+
+Borchani generates standard React 19 applications written in TypeScript — not a visual-builder export, not a proprietary component format. If you have ever read a React codebase, you will recognize every file.
+
+- **React 19** for the UI layer, using function components and hooks. No class components, no legacy patterns.
+- **TypeScript** throughout. Every component is typed, every prop has an interface, and the data models are described as types — so your editor catches mistakes before they ship.
+- **Vite** as the build tool, which means fast local dev and instant hot-module reload when you take the code into your own environment.
+
+The point of typed code is not academic. It is what lets a human developer pick up the project later and extend it without guessing. That is the difference between a prototype you throw away and a foundation you build on.
+
+## Styling: Tailwind CSS + shadcn/ui
+
+Borchani styles every app with **Tailwind CSS** and ships the full **shadcn/ui** component library pre-installed.
+
+- **Tailwind** keeps styling in the markup, so there are no orphaned CSS files drifting out of sync with your components.
+- **shadcn/ui** gives you 50+ accessible, customizable components — dialogs, dropdowns, tables, forms, toasts — that live *inside your repo* as editable source, not as a locked dependency. You can open any component and change it.
+
+This combination is why Borchani apps look polished without a designer: the defaults are professional, and the building blocks are consistent across the whole app.
+
+## The backend: Postgres + auth, pre-wired
+
+This is where Borchani separates itself from frontend-only AI builders. Every app comes with the backend already standing up:
+
+- A real **Postgres** database with a schema generated from your description. Tables, relationships, and types are created for you.
+- **Authentication** wired in by default — sign-up, login, and protected routes — without you registering for a separate auth provider or pasting config files.
+- **API routes** generated alongside the frontend, so data actually flows end to end instead of being faked with local state.
+
+You describe the feature in plain English; Borchani decides the data shape, writes the migration, and connects it to the UI.
+
+## Deployment: a live URL in one click
+
+When you hit Deploy, Borchani provisions hosting, a CDN, and HTTPS automatically, and gives you a live URL in about 30 seconds. Because the output is standard React + Vite, you are never trapped:
+
+- Export to **GitHub** with one click and run your own CI/CD.
+- Deploy the same code to **Vercel, Netlify, Cloudflare, AWS**, or your own server.
+- Download the full source as a ZIP at any time.
+
+There is no Borchani runtime that your app depends on after export. The code stands on its own.
+
+## Why this stack, and why it matters
+
+The whole stack is deliberately boring in the best way — every choice is a mainstream, well-documented technology that thousands of engineers already know:
+
+| Layer | Choice | Why |
+|-------|--------|-----|
+| UI | React 19 | The most widely used UI library; easy to hire for and extend |
+| Language | TypeScript | Catches errors early; makes handoff to humans safe |
+| Styling | Tailwind + shadcn/ui | Polished defaults, editable source, no lock-in |
+| Database | Postgres | Battle-tested, relational, production-grade |
+| Auth | Built-in | Secure by default, zero third-party setup |
+| Hosting | One-click, portable | Deploy anywhere; export anytime |
+
+The result is code you can actually live with: readable, typed, conventional, and yours. That is the entire philosophy behind Borchani — build it with AI, but ship something a developer would be happy to maintain.
+
+## Frequently asked questions
+
+**Does Borchani lock me into a proprietary framework?**
+No. The output is standard React 19 + TypeScript + Vite. There is no proprietary runtime, and you can export and deploy the code anywhere.
+
+**Can I edit the generated code by hand?**
+Yes. Everything — components, API routes, the database schema, shadcn/ui components — is plain source in your repo. Edit it directly or keep iterating through Borchani in plain English.
+
+**What database does Borchani use?**
+A real Postgres database, with a schema generated from your description. You are not limited to a toy data store or browser-only state.
+
+**Do I need to set up authentication separately?**
+No. Auth is wired in by default, including sign-up, login, and protected routes, without registering for a separate provider.
+
+**Where can I deploy a Borchani app?**
+Anywhere that runs a standard React + Vite app — Vercel, Netlify, Cloudflare, AWS, or your own server. One-click deploy and GitHub export are both built in.
+
+## Related Articles
+
+- [From Idea to Deployed App — A Complete Borchani Walkthrough](/from-idea-to-deployed-app-borchani-walkthrough)
+- [How Developers Ship Faster With AI Tools](/how-developers-ship-faster-with-ai-tools)
+- [Prompt Engineering for AI App Builders](/prompt-engineering-for-ai-app-builders)
+- [Why Internal Tools Should Be Built With AI](/why-internal-tools-should-be-built-with-ai)
+- [Build a Web App Without Coding in 2025](/build-web-app-without-coding-2025)
+
+---
+
+Ready to see the stack in action? **Build it with Borchani → [borchani.com](https://borchani.com)**

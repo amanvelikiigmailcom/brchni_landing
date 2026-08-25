@@ -1,6 +1,14 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/astrowind-template-in-depth", "destination": "/borchani-tech-stack-explained", "permanent": true },
+    { "source": "/get-started-website-with-astro-tailwind-css", "destination": "/blog", "permanent": true },
+    { "source": "/how-to-customize-astrowind-to-your-brand", "destination": "/blog", "permanent": true },
+    { "source": "/landing", "destination": "/blog", "permanent": true },
+    { "source": "/markdown-elements-demo-post", "destination": "/blog", "permanent": true },
+    { "source": "/useful-resources-to-create-websites", "destination": "/blog", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/_astro/(.*)",

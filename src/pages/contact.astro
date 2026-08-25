@@ -46,6 +46,7 @@ const metadata = {
 
   <Features2
     title="Other ways to reach us"
+    subtitle="We reply to all messages within one business day."
     items={[
       {
         title: 'General questions',
@@ -69,7 +70,7 @@ const metadata = {
       },
       {
         title: 'Email',
-        description: 'hello@borchani.com',
+        description: 'help@borchani.com',
         icon: 'tabler:mail',
       },
       {
@@ -79,4 +80,36 @@ const metadata = {
       },
     ]}
   />
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://borchani.com" },
+      { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://borchani.com/contact" }
+    ]
+  })} />
+
+  <!-- JSON-LD: ContactPage -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Borchani",
+    "url": "https://borchani.com/contact",
+    "description": "Get help from the Borchani team. We reply within one business day.",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Borchani",
+      "email": "help@borchani.com",
+      "url": "https://borchani.com",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "help@borchani.com",
+        "contactType": "customer support",
+        "areaServed": "Worldwide",
+        "availableLanguage": ["English"]
+      }
+    }
+  })} />
 </Layout>

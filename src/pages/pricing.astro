@@ -31,37 +31,36 @@ const metadata = {
   <Prices
     title="Pick your plan"
     subtitle="All plans include the core Borchani experience. Paid plans just remove the limits."
+    columns={4}
     prices={[
       {
-        title: 'Starter',
-        subtitle: 'For solo builders and side projects',
-        price: 19,
-        period: 'per month',
+        title: 'Free',
+        subtitle: 'Try it, no card required',
+        price: 0,
+        period: 'forever',
         items: [
-          { description: '150 AI credits / month' },
-          { description: 'Live sandbox preview' },
-          { description: 'Download code as ZIP' },
-          { description: 'React 19 + TypeScript + Tailwind' },
+          { description: '5 credits / day' },
+          { description: 'Public projects only' },
           { description: 'Community support' },
         ],
         callToAction: {
           target: '_blank',
-          text: 'Get Starter',
-          href: 'https://app.borchani.com/signup?plan=starter',
+          text: 'Start for free',
+          href: 'https://app.borchani.com/signup',
         },
       },
       {
         title: 'Pro',
-        subtitle: 'For developers who ship every week',
-        price: 49,
+        subtitle: 'For solo builders moving fast',
+        price: 19,
         period: 'per month',
         items: [
-          { description: '500 AI credits / month' },
-          { description: 'One-click GitHub export' },
-          { description: 'Custom domain deployment' },
-          { description: 'Priority build queue' },
-          { description: 'TypeScript SDK access' },
-          { description: 'Email support (< 24 h)' },
+          { description: '100 credits / month' },
+          { description: '5 daily credits (up to 150/mo)' },
+          { description: 'Credit rollovers' },
+          { description: 'On-demand credit top-ups' },
+          { description: 'Custom domains' },
+          { description: 'User roles & permissions' },
         ],
         callToAction: {
           target: '_blank',
@@ -73,21 +72,40 @@ const metadata = {
       },
       {
         title: 'Business',
-        subtitle: 'For teams building products together',
-        price: 149,
+        subtitle: 'For teams shipping together',
+        price: 49,
         period: 'per month',
         items: [
-          { description: '2,000 AI credits / month' },
-          { description: 'Up to 10 seats included' },
-          { description: 'Shared workspaces & build history' },
-          { description: 'REST API + webhooks' },
-          { description: 'SSO & admin controls' },
-          { description: 'Priority chat & email support' },
+          { description: '350 credits / month' },
+          { description: 'Everything in Pro' },
+          { description: 'Internal publish' },
+          { description: 'Team workspace' },
+          { description: 'Personal projects' },
+          { description: 'Design templates' },
+          { description: 'Role-based access' },
+          { description: 'Security center' },
         ],
         callToAction: {
           target: '_blank',
           text: 'Get Business',
           href: 'https://app.borchani.com/signup?plan=business',
+        },
+      },
+      {
+        title: 'Premium',
+        subtitle: 'For power users & agencies',
+        price: 199,
+        period: 'per month',
+        items: [
+          { description: '1,700 credits / month' },
+          { description: 'Everything in Business' },
+          { description: 'Volume-based credit pricing' },
+          { description: 'Dedicated support' },
+        ],
+        callToAction: {
+          target: '_blank',
+          text: 'Get Premium',
+          href: 'https://app.borchani.com/signup?plan=premium',
         },
       },
     ]}
@@ -192,12 +210,22 @@ const metadata = {
       {
         title: 'Does the free plan expire?',
         description:
-          'No. The free plan is free forever. You get 10 builds a month and full access to the builder — no credit card required to start.',
+          'No. The free plan is free forever. You get 5 credits per day — no credit card required to start.',
       },
       {
-        title: 'What counts as a "build"?',
+        title: 'What is a credit?',
         description:
-          'A build is one complete generation session — from your prompt to a running application. Iterating on an existing build (adding features, fixing things through chat) does not count as a new build.',
+          'One credit = one AI generation or edit. Simple prompts use 1 credit; complex generations use more. You can see the exact cost before confirming any action.',
+      },
+      {
+        title: 'What are credit rollovers?',
+        description:
+          'On Pro and above, unused monthly credits carry over to the next month instead of disappearing. Your balance grows if you have a lighter month.',
+      },
+      {
+        title: 'Can I buy extra credits without upgrading?',
+        description:
+          'Yes. Pro and above plans include on-demand credit top-ups — buy a block of credits whenever you need them without changing your plan.',
       },
       {
         title: 'Can I cancel at any time?',
@@ -205,14 +233,19 @@ const metadata = {
           'Yes. Cancel from your account settings anytime. You keep access until the end of the billing period and you will not be charged again.',
       },
       {
+        title: 'What happens to my projects if I downgrade?',
+        description:
+          'Your projects stay intact. You lose access to paid features (custom domains, team workspace, etc.) but all your code and history remain yours.',
+      },
+      {
         title: 'Do you offer annual billing?',
         description:
-          'Yes — annual plans come with two months free. Switch to annual billing from your account settings at any time.',
+          'Yes — annual plans save 20%. Switch to annual billing from your account settings at any time.',
       },
       {
         title: 'Are there any hidden fees?',
         description:
-          'None. The monthly price covers everything listed in the plan. The only additional cost would be if you use a custom LLM API key on your own account.',
+          'None. The monthly price covers everything listed in the plan.',
       },
     ]}
   />
@@ -232,6 +265,16 @@ const metadata = {
     ]}
   />
 
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://borchani.com" },
+      { "@type": "ListItem", "position": 2, "name": "Pricing", "item": "https://borchani.com/pricing" }
+    ]
+  })} />
+
   <!-- JSON-LD: PriceSpecification -->
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
@@ -242,7 +285,7 @@ const metadata = {
       {
         "@type": "Offer",
         "name": "Free",
-        "description": "10 AI builds per month, live preview, ZIP download",
+        "description": "5 credits per day, public projects, community support",
         "price": "0",
         "priceCurrency": "USD",
         "priceSpecification": {
@@ -255,25 +298,38 @@ const metadata = {
       {
         "@type": "Offer",
         "name": "Pro",
-        "description": "Unlimited builds, GitHub export, custom domain, SDK access",
-        "price": "29",
+        "description": "100 credits/month, credit rollovers, custom domains, user roles",
+        "price": "19",
         "priceCurrency": "USD",
         "priceSpecification": {
           "@type": "UnitPriceSpecification",
-          "price": "29",
+          "price": "19",
           "priceCurrency": "USD",
           "unitText": "MONTH"
         }
       },
       {
         "@type": "Offer",
-        "name": "Team",
-        "description": "Everything in Pro plus 10 seats, shared workspaces, API, SSO",
-        "price": "99",
+        "name": "Business",
+        "description": "350 credits/month, team workspace, role-based access, security center",
+        "price": "49",
         "priceCurrency": "USD",
         "priceSpecification": {
           "@type": "UnitPriceSpecification",
-          "price": "99",
+          "price": "49",
+          "priceCurrency": "USD",
+          "unitText": "MONTH"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Premium",
+        "description": "1700 credits/month, volume-based pricing, dedicated support",
+        "price": "199",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "199",
           "priceCurrency": "USD",
           "unitText": "MONTH"
         }

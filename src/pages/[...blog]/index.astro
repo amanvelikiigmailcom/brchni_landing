@@ -43,6 +43,54 @@ const metadata = merge(
   },
   { ...(post?.metadata ? { ...post.metadata, canonical: post.metadata?.canonical || url } : {}) }
 ) as MetaData;
+
+// Resolve a usable absolute image URL for structured data
+const imageUrl =
+  typeof image === 'string' ? image : (image as ImageMetadata)?.src ? String((image as ImageMetadata).src) : undefined;
+
+// JSON-LD: BlogPosting (Article) — boosts E-E-A-T & rich results
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.title,
+  description: post.excerpt,
+  ...(imageUrl ? { image: imageUrl } : {}),
+  datePublished: post.publishDate ? new Date(post.publishDate).toISOString() : undefined,
+  dateModified: post.updateDate
+    ? new Date(post.updateDate).toISOString()
+    : post.publishDate
+      ? new Date(post.publishDate).toISOString()
+      : undefined,
+  author: {
+    '@type': 'Person',
+    name: post.author || 'Zhassulan Baigozha',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Borchani',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://borchani.com/logo-light.png',
+    },
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': String(url),
+  },
+  ...(post.category ? { articleSection: post.category.title } : {}),
+  ...(post.tags && post.tags.length ? { keywords: post.tags.map((t) => (typeof t === 'string' ? t : t.title)).join(', ') } : {}),
+};
+
+// JSON-LD: BreadcrumbList — Home › Blog › Post
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://borchani.com' },
+    { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://borchani.com/blog' },
+    { '@type': 'ListItem', position: 3, name: post.title, item: String(url) },
+  ],
+};
 ---
 
 <Layout metadata={metadata}>
@@ -51,4 +99,10 @@ const metadata = merge(
   </SinglePost>
   <ToBlogLink />
   <RelatedPosts post={post} />
+
+  <!-- JSON-LD: BlogPosting (Article) -->
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 </Layout>
