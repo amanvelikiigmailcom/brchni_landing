@@ -216,9 +216,8 @@ const en: Translations = {
         'Borchani is an AI-powered app builder. You describe what you want to create in plain English, and Borchani generates a complete, production-ready full-stack application — React frontend, TypeScript, Tailwind CSS — with a live preview and one-click deployment.',
     },
     q2: {
-      title: 'Do I need to know how to code?',
-      description:
-        'No. Borchani is designed for both developers who want to move faster and non-technical users who want to build without learning to code. You can use Borchani entirely through natural language conversation.',
+      title: 'Who is Borchani built for?',
+      description: 'Borchani is built for software engineers, product developers, and technical founders who want to accelerate their development workflow using AI-assisted tools.'
     },
     q3: {
       title: 'What tech stack do generated apps use?',

@@ -216,9 +216,8 @@ const ko: Translations = {
         'Borchani는 AI 기반 앱 빌더입니다. 만들고 싶은 것을 일반 언어로 설명하면, Borchani가 라이브 프리뷰와 원클릭 배포가 포함된 완전한 프로덕션 준비 완료 풀스택 애플리케이션 — React 프론트엔드, TypeScript, Tailwind CSS — 을 생성합니다.',
     },
     q2: {
-      title: '코딩을 알아야 하나요?',
-      description:
-        '아니요. Borchani는 더 빠르게 움직이고 싶은 개발자와 코딩을 배우지 않고 구축하고 싶은 비기술 사용자 모두를 위해 설계되었습니다. Borchani는 완전히 자연어 대화를 통해 사용할 수 있습니다.',
+      title: 'Borchani는 누구를 위해 만들어졌나요?',
+      description: 'Borchani는 AI를 사용하여 개발 워크플로우를 가속화하려는 소프트웨어 엔지니어, 제품 개발자 및 기술 창업자를 위해 구축되었습니다.'
     },
     q3: {
       title: '생성된 앱은 어떤 기술 스택을 사용하나요?',

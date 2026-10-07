@@ -168,7 +168,10 @@ const es: Translations = {
     title: 'Preguntas frecuentes',
     subtitle: 'Todo lo que necesitas saber sobre Borchani antes de empezar a construir.',
     q1: { title: '¿Qué es Borchani?', description: 'Borchani es un constructor de apps impulsado por IA. Describes lo que quieres crear en texto simple y Borchani genera una aplicación full-stack completa y lista para producción con vista previa en vivo y deploy con un clic.' },
-    q2: { title: '¿Necesito saber programar?', description: 'No. Borchani está diseñado tanto para desarrolladores que quieren moverse más rápido como para usuarios no técnicos que quieren construir sin aprender a programar.' },
+    q2: {
+      title: '¿Para quién está diseñado Borchani?',
+      description: 'Borchani está diseñado para ingenieros de software, desarrolladores de productos y fundadores técnicos que desean acelerar su flujo de trabajo de desarrollo con IA.'
+    },
     q3: { title: '¿Qué stack tecnológico usan las apps generadas?', description: 'Todas las apps se construyen con React 19, TypeScript, Vite, Tailwind CSS y componentes shadcn/ui.' },
     q4: { title: '¿Puedo exportar y ser dueño del código?', description: 'Sí. Cada app que construyes te pertenece. Exporta el código fuente completo a GitHub en cualquier momento o descárgalo como ZIP.' },
     q5: { title: '¿Qué tan seguro es Borchani?', description: 'Nos tomamos la seguridad en serio. Las claves API están cifradas de extremo a extremo, el código se ejecuta en contenedores aislados y nuestra infraestructura está construida sobre servicios cloud listos para SOC 2.' },
