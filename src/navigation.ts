@@ -1,29 +1,27 @@
-import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
+import { getPermalink, getAsset } from './utils/permalinks';
 import type { Translations } from './i18n/schema';
 
-export function getHeaderData(t: Translations, locale: string) {
-  const prefix = locale === 'en' ? '' : `/${locale}`;
+export function getHeaderData(t: Translations, _locale: string) {
   return {
     links: [
       {
         text: t.nav.product,
         links: [
-          { text: t.nav.features, href: `${prefix}/#features` },
-          { text: t.nav.howItWorks, href: `${prefix}/#how-it-works` },
-          { text: t.nav.whatWeBuild, href: `${prefix}/services` },
-          { text: t.nav.caseStudies, href: `${prefix}/case-studies` },
+          { text: t.nav.features, href: '/#features' },
+          { text: t.nav.howItWorks, href: '/#how-it-works' },
+          { text: t.nav.whatWeBuild, href: '/services' },
         ],
       },
       {
         text: t.nav.pricing,
-        href: `${prefix}/pricing`,
+        href: '/pricing',
       },
       {
         text: t.nav.resources,
         links: [
-          { text: t.nav.blog, href: `${prefix}/blog` },
-          { text: t.nav.about, href: `${prefix}/about` },
-          { text: t.nav.contact, href: `${prefix}/contact` },
+          { text: t.nav.blog, href: '/blog' },
+          { text: t.nav.about, href: '/about' },
+          { text: t.nav.contact, href: '/contact' },
         ],
       },
     ],
@@ -31,46 +29,33 @@ export function getHeaderData(t: Translations, locale: string) {
   };
 }
 
-export function getFooterData(t: Translations, locale: string = 'en') {
-  const prefix = locale === 'en' ? '' : `/${locale}`;
+export function getFooterData(t: Translations, _locale: string = 'en') {
   return {
     links: [
       {
         title: t.footer.productTitle,
         links: [
-          { text: t.footer.features, href: `${prefix}/#features` },
-          { text: t.footer.howItWorks, href: `${prefix}/#how-it-works` },
-          { text: t.footer.pricing, href: `${prefix}/pricing` },
-          { text: t.footer.changelog, href: '#' },
-          { text: t.footer.roadmap, href: '#' },
-        ],
-      },
-      {
-        title: t.footer.developersTitle,
-        links: [
-          { text: t.footer.documentation, href: '#' },
-          { text: t.footer.apiReference, href: '#' },
-          { text: t.footer.sdk, href: '#' },
-          { text: t.footer.examples, href: '#' },
+          { text: t.footer.features, href: '/#features' },
+          { text: t.footer.howItWorks, href: '/#how-it-works' },
+          { text: t.footer.pricing, href: '/pricing' },
         ],
       },
       {
         title: t.footer.supportTitle,
         links: [
-          { text: t.footer.helpCenter, href: '#' },
-          { text: t.footer.community, href: '#' },
-          { text: t.footer.status, href: '#' },
-          { text: t.footer.contactUs, href: `${prefix}/contact` },
+          { text: t.footer.contactUs, href: '/contact' },
+          { text: 'Email support', href: 'mailto:support@borchani.com' },
         ],
       },
       {
         title: t.footer.companyTitle,
         links: [
-          { text: t.footer.about, href: `${prefix}/about` },
-          { text: t.footer.blog, href: `${prefix}/blog` },
-          { text: t.footer.careers, href: '#' },
+          { text: t.footer.about, href: '/about' },
+          { text: t.footer.blog, href: '/blog' },
           { text: t.footer.privacyPolicy, href: getPermalink('/privacy') },
           { text: t.footer.termsOfService, href: getPermalink('/terms') },
+          { text: 'Founder on LinkedIn', href: 'https://www.linkedin.com/in/amanay-yessen-1a1a26188/?locale=en' },
+          { text: 'Website on GitHub', href: 'https://github.com/amanvelikiigmailcom/brchni_landing' },
         ],
       },
     ],
@@ -79,8 +64,16 @@ export function getFooterData(t: Translations, locale: string = 'en') {
       { text: t.footer.privacyPolicy, href: getPermalink('/privacy') },
     ],
     socialLinks: [
-      { ariaLabel: 'X / Twitter', icon: 'tabler:brand-x', href: 'https://x.com/borchani' },
-      { ariaLabel: 'Discord', icon: 'tabler:brand-discord', href: '#' },
+      {
+        ariaLabel: 'Founder on LinkedIn',
+        icon: 'tabler:brand-linkedin',
+        href: 'https://www.linkedin.com/in/amanay-yessen-1a1a26188/?locale=en',
+      },
+      {
+        ariaLabel: 'Borchani website on GitHub',
+        icon: 'tabler:brand-github',
+        href: 'https://github.com/amanvelikiigmailcom/brchni_landing',
+      },
       { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
     ],
     footNote: t.footer.copyright,

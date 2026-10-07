@@ -1,450 +1,258 @@
 ---
+import workspaceImage from '~/assets/images/borchani-workspace-concept.png';
 import PageLayout from '~/layouts/PageLayout.astro';
 import PromptHero from '~/components/widgets/PromptHero.astro';
-import Stats from '~/components/widgets/Stats.astro';
 import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
+const siteUrl = 'https://borchani.com/';
+const founderUrl = 'https://www.linkedin.com/in/amanay-yessen-1a1a26188/?locale=en';
+const githubUrl = 'https://github.com/amanvelikiigmailcom/brchni_landing';
+const description =
+  'Borchani is an AI workspace for building and iterating on web applications. Describe a project, inspect the generated code, and test it in a live preview.';
 const metadata = {
-  title: 'Borchani — #1 Vibe Coding Platform | Build Full-Stack Apps with AI',
-  description:
-    'The #1 vibe coding platform. Describe your app, Borchani builds React + TypeScript full-stack in minutes. Live preview, one-click deploy. Free to start.',
+  title: 'Borchani — AI Workspace for Building Web Applications',
+  description,
   ignoreTitleTemplate: true,
+  canonical: siteUrl,
+  openGraph: {
+    title: 'Borchani — Build Web Applications with AI',
+    description,
+    url: siteUrl,
+    type: 'website',
+    images: [{ url: '~/assets/images/borchani-workspace-concept.png', width: 1672, height: 941 }],
+  },
 };
+
+const faqs = [
+  {
+    title: 'What is Borchani?',
+    description:
+      'Borchani is an AI workspace for creating and refining web applications from natural-language instructions. You can review the project and see the result in a live preview.',
+    icon: 'tabler:chevrons-right',
+  },
+  {
+    title: 'Who is Borchani for?',
+    description:
+      'Developers, founders, and product teams use Borchani to explore ideas, build interfaces, and iterate on applications.',
+    icon: 'tabler:chevrons-right',
+  },
+  {
+    title: 'Can I review the code?',
+    description:
+      'Yes. Borchani is designed around a visible project workspace, so you can inspect the files as you refine your app.',
+    icon: 'tabler:chevrons-right',
+  },
+  {
+    title: 'How do I get started?',
+    description:
+      'Open the Borchani app, describe the web application you want to build, and continue refining it in the workspace.',
+    icon: 'tabler:chevrons-right',
+  },
+];
 ---
 
 <PageLayout metadata={metadata}>
-
-  <!-- ─── Hero — prompt input (Lovable / Bolt style) ─── -->
   <PromptHero />
 
-  <!-- ─── Stats strip ─── -->
-  <Stats
-    stats={[
-      { amount: '50K+', title: 'Apps shipped' },
-      { amount: '12K+', title: 'Active builders' },
-      { amount: '3 min', title: 'From idea to preview' },
-      { amount: '99.9%', title: 'Uptime SLA' },
-    ]}
-  />
-
-  <!-- ─── Pain section ─── -->
-  <section class="px-4 py-16 sm:py-20 not-prose">
+  <section id="workspace" class="px-4 py-16 sm:py-20 not-prose" aria-labelledby="workspace-title">
     <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-default dark:text-white">
-          Building an app the old way meant…
+      <div class="text-center mb-10">
+        <p class="text-primary font-semibold mb-3">Inside the workspace</p>
+        <h2 id="workspace-title" class="text-3xl sm:text-4xl font-bold tracking-tight text-default dark:text-white">
+          From a specification to a working app
         </h2>
-        <p class="mt-4 text-lg text-muted dark:text-slate-400 max-w-2xl mx-auto">
-          Most ideas never ship because the cost and time to build aren't worth the risk before you have a single user.
+        <p class="mt-4 text-lg text-muted dark:text-slate-400 max-w-3xl mx-auto">
+          Describe what you want to build, inspect the project files, and refine the result in a live preview.
         </p>
       </div>
-      <div class="grid sm:grid-cols-3 gap-8 text-center">
-        <div class="rounded-2xl border border-red-100 dark:border-red-900/30 bg-red-50/50 dark:bg-red-950/20 p-8">
-          <p class="text-5xl font-extrabold text-red-500 mb-3">$80K+</p>
-          <p class="text-lg font-semibold mb-2 text-default dark:text-white">Upfront dev cost</p>
-          <p class="text-muted dark:text-slate-400 text-sm leading-relaxed">
-            Hiring a dev team for a simple SaaS MVP runs $80K–$150K before you know if anyone wants it.
-          </p>
-        </div>
-        <div class="rounded-2xl border border-red-100 dark:border-red-900/30 bg-red-50/50 dark:bg-red-950/20 p-8">
-          <p class="text-5xl font-extrabold text-red-500 mb-3">6–18 mo</p>
-          <p class="text-lg font-semibold mb-2 text-default dark:text-white">Time to first user</p>
-          <p class="text-muted dark:text-slate-400 text-sm leading-relaxed">
-            Sprints, stand-ups, code reviews — while your window of opportunity narrows every single month.
-          </p>
-        </div>
-        <div class="rounded-2xl border border-red-100 dark:border-red-900/30 bg-red-50/50 dark:bg-red-950/20 p-8">
-          <p class="text-5xl font-extrabold text-red-500 mb-3">0 lines</p>
-          <p class="text-lg font-semibold mb-2 text-default dark:text-white">You wrote yourself</p>
-          <p class="text-muted dark:text-slate-400 text-sm leading-relaxed">
-            But you're still paying someone else to own your codebase, infrastructure, and all your momentum.
-          </p>
-        </div>
-      </div>
-      <p class="text-center mt-12 text-xl font-semibold text-primary dark:text-blue-400">
-        Borchani changes all three — at once.
-      </p>
+      <figure
+        class="overflow-hidden rounded-2xl border border-gray-200 dark:border-slate-700 shadow-xl bg-white dark:bg-slate-900"
+      >
+        <img
+          src={workspaceImage.src}
+          width="1672"
+          height="941"
+          loading="eager"
+          decoding="async"
+          class="w-full h-auto"
+          alt="Illustrative Borchani workspace interface with a task panel, project files and code editor, and live application preview"
+        />
+        <figcaption
+          class="px-4 py-3 text-sm text-muted dark:text-slate-400 border-t border-gray-200 dark:border-slate-700"
+        >
+          Illustrative view of the Borchani workspace.
+        </figcaption>
+      </figure>
     </div>
   </section>
 
-  <!-- ─── Core features — benefit-first (Bolt style) ─── -->
   <Features
     id="features"
     tagline="Why Borchani"
-    title="Everything you need to ship a real app"
-    subtitle="Borchani is the only vibe coding platform that generates production-grade full-stack code — not just a frontend prototype."
+    title="Build in one connected workspace"
+    subtitle="Keep the request, project files, and running result together while you iterate."
     columns={3}
     items={[
       {
-        title: 'Ship full-stack apps from one prompt',
+        title: 'Start with a specification',
         description:
-          'Frontend, backend, database schema, and API routes generated together. No gluing three tools into one workflow.',
-        icon: 'tabler:layers-union',
+          'Explain the application you need in plain language and use it as the starting point for the project.',
+        icon: 'tabler:file-text',
       },
       {
-        title: 'See it working before you commit',
-        description:
-          'Your app runs live in a real browser sandbox as Borchani builds. Click every screen, catch gaps early.',
+        title: 'Inspect the project',
+        description: 'See the generated files and code rather than treating the result as a black box.',
+        icon: 'tabler:files',
+      },
+      {
+        title: 'Preview the result',
+        description: 'Check the application visually as you work and use what you see to guide the next change.',
         icon: 'tabler:device-laptop',
       },
       {
-        title: 'Live URL in 30 seconds, free SSL included',
-        description:
-          'Hit Deploy. Borchani provisions hosting, CDN, and HTTPS automatically. Share a real link in under a minute.',
-        icon: 'tabler:rocket',
-      },
-      {
-        title: 'Clean, typed code you actually own',
-        description:
-          'Every app is React + TypeScript — no proprietary lock-in. Export the full source and deploy it anywhere, anytime.',
-        icon: 'tabler:brand-typescript',
-      },
-      {
-        title: 'Auth + Postgres pre-wired, zero setup',
-        description:
-          'User authentication and a real database are included by default. No third-party accounts, no config files.',
-        icon: 'tabler:database',
-      },
-      {
-        title: '"Make the table sortable" — done in seconds',
-        description:
-          'Keep iterating in plain English after the first build. Borchani applies surgical changes without breaking what works.',
+        title: 'Iterate through instructions',
+        description: 'Ask for changes in the same workspace and refine the application step by step.',
         icon: 'tabler:messages',
+      },
+      {
+        title: 'Build for real use cases',
+        description: 'Explore dashboards, internal tools, product prototypes, and other web application ideas.',
+        icon: 'tabler:layout-dashboard',
+      },
+      {
+        title: 'Keep developers in control',
+        description: 'Review the implementation and decide what to change before sharing your work.',
+        icon: 'tabler:code',
       },
     ]}
   />
 
-  <!-- ─── Role-based positioning (Bolt persona section) ─── -->
-  <Features2
-    tagline="Whatever your role"
-    title="Borchani gives you superpowers"
-    subtitle="Whether you're a founder, developer, or agency — vibe coding changes how fast you ship."
+  <Steps
+    id="how-it-works"
+    tagline="How it works"
+    title="A direct path from idea to iteration"
     items={[
       {
-        title: 'For founders',
-        description:
-          'Go from idea to working MVP in a weekend. Validate before you hire. Ship before you fundraise.',
-        icon: 'tabler:rocket',
+        title: '1. Describe the project',
+        description: 'Write a short specification of the app, its users, and the screens or behavior you need.',
+        icon: 'tabler:pencil',
       },
       {
-        title: 'For developers',
-        description:
-          'Prototype and validate ideas in hours, not sprints. Let Borchani handle boilerplate while you focus on logic.',
-        icon: 'tabler:code',
+        title: '2. Inspect and test',
+        description: 'Review the project files and explore the application in the preview.',
+        icon: 'tabler:eye',
       },
       {
-        title: 'For agencies',
-        description:
-          'Deliver client projects 10× faster. Generate the scaffold in minutes, hand off clean code at the end.',
-        icon: 'tabler:briefcase',
+        title: '3. Refine it',
+        description: 'Give follow-up instructions, check the result, and repeat until the project fits your goal.',
+        icon: 'tabler:adjustments',
       },
     ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features2>
+  />
 
-  <!-- ─── Inline testimonial after Features ─── -->
   <Testimonials
+    title="What builders say"
+    subtitle="Feedback from people building with Borchani."
     testimonials={[
       {
         testimonial:
           'I launched my SaaS MVP in a weekend. No backend experience, no DevOps. Borchani just handled everything.',
         name: 'Marco R.',
         job: 'Founder, Trackflow',
-        image: {
-          src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80',
-          alt: 'Marco R., founder who shipped his SaaS using Borchani vibe coding',
-        },
       },
-    ]}
-    classes={{ container: 'max-w-3xl' }}
-  />
-
-  <!-- ─── How it works — 3 steps (vibe coding language) ─── -->
-  <Steps
-    id="how-it-works"
-    tagline="How it works"
-    title="From idea to deployed app in 3 steps"
-    subtitle="No tutorials, no boilerplate. Just describe what you want."
-    items={[
-      {
-        title: 'Step 1: <span class="font-normal">Describe your app</span>',
-        description:
-          'Type your idea like you\'d explain it to a developer. Borchani handles architecture, routing, and data models automatically.',
-        icon: 'tabler:pencil',
-      },
-      {
-        title: 'Step 2: <span class="font-normal">Vibe-check in live preview</span>',
-        description:
-          'Your app runs in a real browser sandbox. Click through every screen. Refine anything by just asking — "make the navbar sticky", "add a dark mode toggle".',
-        icon: 'tabler:eye',
-      },
-      {
-        title: 'Step 3: <span class="font-normal">Ship it</span>',
-        description:
-          'One click deploys to a live URL with SSL, CDN, and monitoring. Share it with users, investors, or clients immediately.',
-        icon: 'tabler:rocket',
-      },
-    ]}
-  />
-
-  <!-- ─── Inline testimonial after Steps ─── -->
-  <Testimonials
-    testimonials={[
       {
         testimonial:
           'We replaced a 3-week sprint with a 2-hour Borchani session. The code quality was good enough to ship straight to production.',
         name: 'Aiko T.',
         job: 'Engineering Lead, Stackline',
-        image: {
-          src: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80',
-          alt: 'Aiko T., engineering lead who used Borchani to accelerate delivery',
-        },
       },
-    ]}
-    classes={{ container: 'max-w-3xl' }}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Testimonials>
-
-  <!-- ─── Testimonials (3rd — before FAQ) ─── -->
-  <Testimonials
-    title="What builders say about Borchani"
-    subtitle="From solo founders to dev teams — real people shipping real products."
-    testimonials={[
       {
         testimonial:
           'Borchani is the first vibe coding tool where the output is actually maintainable TypeScript. Our devs were happy to take it over.',
         name: 'Daniel K.',
         job: 'CTO, Novu Labs',
-        image: {
-          src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
-          alt: 'Daniel K., CTO who adopted Borchani for production app development',
-        },
-      },
-    ]}
-    classes={{ container: 'max-w-3xl' }}
-  />
-
-  <!-- ─── FAQs (SEO + FAQPage schema) ─── -->
-  <FAQs
-    id="faq"
-    title="Frequently asked questions"
-    subtitle="Everything you need to know before you start building."
-    tagline="FAQ"
-    classes={{ container: 'max-w-4xl' }}
-    items={[
-      {
-        title: 'What is vibe coding?',
-        description:
-          'Vibe coding means building software by describing what you want in plain English, letting AI handle the code. Borchani is the most complete vibe coding platform: it generates the full stack, runs a live preview, and deploys with one click.',
-        icon: 'tabler:chevrons-right',
-      },
-      {
-        title: 'What is Borchani?',
-        description:
-          'Borchani is an AI app builder and vibe coding platform that generates production-ready full-stack web applications from plain-English prompts. You describe your idea, Borchani writes React + TypeScript code, wires up a database, and deploys it — no coding required.',
-        icon: 'tabler:chevrons-right',
-      },
-      {
-        title: 'How is Borchani different from Lovable or Bolt?',
-        description:
-          'Borchani focuses on full-stack output quality: typed code, built-in auth, a real Postgres database, and clean exports you can take to any host. No proprietary lock-in — you own the code and can deploy it anywhere.',
-        icon: 'tabler:chevrons-right',
-      },
-      {
-        title: 'Do I need to know how to code to use Borchani?',
-        description:
-          'No. Borchani is designed for founders, designers, and product people. If you can write an email, you can build an app on Borchani. Developers also use it to skip boilerplate and prototype faster.',
-        icon: 'tabler:chevrons-right',
-      },
-      {
-        title: 'Can I export and own the source code?',
-        description:
-          'Yes. Every app you build belongs to you. Export the full React + TypeScript source at any time and deploy it to Vercel, Netlify, or your own server. Borchani never holds your code hostage.',
-        icon: 'tabler:chevrons-right',
-      },
-      {
-        title: 'How much does Borchani cost?',
-        description:
-          'Borchani is free to start — build, preview, and iterate for free. Paid plans add custom domains, higher compute, team collaboration, and priority support. No credit card required to begin.',
-        icon: 'tabler:chevrons-right',
       },
     ]}
   />
 
-  <!-- ─── Latest blog posts ─── -->
+  <section class="px-4 py-16 sm:py-20 not-prose" aria-labelledby="founder-title">
+    <div
+      class="max-w-4xl mx-auto rounded-2xl border border-gray-200 dark:border-slate-700 bg-blue-50 dark:bg-slate-900 p-8 sm:p-10"
+    >
+      <p class="text-primary font-semibold mb-3">Founder</p>
+      <h2 id="founder-title" class="text-2xl sm:text-3xl font-bold text-default dark:text-white">
+        Built by Amanay Yessen
+      </h2>
+      <p class="mt-3 text-muted dark:text-slate-300">
+        Borchani was founded on April 5, 2026 in San Francisco, California. We build tools that help developers and
+        product teams turn application ideas into working software.
+      </p>
+      <div class="mt-5 flex flex-wrap gap-5 text-primary font-medium">
+        <a href={founderUrl} target="_blank" rel="noopener noreferrer" class="hover:underline">Amanay on LinkedIn ↗</a>
+        <a href={githubUrl} target="_blank" rel="noopener noreferrer" class="hover:underline"
+          >Borchani website on GitHub ↗</a
+        >
+      </div>
+    </div>
+  </section>
+
+  <FAQs id="faq" title="Frequently asked questions" items={faqs} />
   <BlogLatestPosts
     id="blog"
-    title="Guides, comparisons, and tutorials"
-    information="Learn how to build faster with vibe coding, compare AI app builders, and get step-by-step guides for shipping your idea with Borchani."
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </BlogLatestPosts>
-
-  <!-- ─── Final CTA ─── -->
+    title="Guides and product notes"
+    information="Explore articles about building web applications and working with Borchani."
+  />
   <CallToAction
-    title="Start vibe coding for free"
-    subtitle="No credit card. No setup. First app live in under 10 minutes."
-    actions={[
-      {
-        variant: 'primary',
-        text: "Build with Borchani — it's free",
-        href: 'https://app.borchani.com/build',
-        target: '_blank',
-      },
-    ]}
+    title="Start building with Borchani"
+    subtitle="Open the workspace and describe the app you want to create."
+    actions={[{ variant: 'primary', text: 'Open Borchani', href: 'https://app.borchani.com/build', target: '_blank' }]}
   />
 
-  <!-- JSON-LD: WebPage + Speakable (voice search / AEO) -->
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Borchani — #1 Vibe Coding Platform",
-    "url": "https://borchani.com",
-    "description": "Build full-stack apps with AI from a plain-English prompt. Live preview, one-click deploy.",
-    "inLanguage": "en",
-    "speakable": {
-      "@type": "SpeakableSpecification",
-      "cssSelector": ["h1", "#faq"]
-    },
-    "primaryImageOfPage": {
-      "@type": "ImageObject",
-      "url": "https://borchani.com/logo-light.png"
-    }
-  })} />
-
-  <!-- JSON-LD: WebSite + SearchAction (Google Sitelinks Searchbox) -->
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Borchani",
-    "url": "https://borchani.com",
-    "description": "The #1 vibe coding platform. Build full-stack apps with AI from a plain-English prompt.",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": "https://app.borchani.com/build?q={search_term_string}"
-      },
-      "query-input": "required name=search_term_string"
-    }
-  })} />
-
-  <!-- JSON-LD: Organization -->
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Borchani",
-    "url": "https://borchani.com",
-    "logo": "https://borchani.com/logo-light.png",
-    "description": "Borchani is a vibe coding platform that generates production-ready full-stack web apps from plain-English prompts.",
-    "sameAs": [
-      "https://x.com/borchani"
-    ],
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "contactType": "customer support",
-      "email": "help@borchani.com",
-      "url": "https://borchani.com/contact"
-    }
-  })} />
-
-  <!-- JSON-LD: FAQPage -->
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is vibe coding?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Vibe coding means building software by describing what you want in plain English, letting AI handle the code. Borchani is the most complete vibe coding platform: it generates the full stack, runs a live preview, and deploys with one click."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is Borchani?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Borchani is an AI app builder and vibe coding platform that generates production-ready full-stack web applications from plain-English prompts. You describe your idea, Borchani writes React + TypeScript code, wires up a database, and deploys it — no coding required."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How is Borchani different from Lovable or Bolt?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Borchani focuses on full-stack output quality: typed code, built-in auth, a real Postgres database, and clean exports you can take to any host. No proprietary lock-in — you own the code and can deploy it anywhere."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do I need to know how to code to use Borchani?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. Borchani is designed for founders, designers, and product people. If you can write an email, you can build an app on Borchani. Developers also use it to skip boilerplate and prototype faster."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I export and own the source code?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Every app you build belongs to you. Export the full React + TypeScript source at any time and deploy it to Vercel, Netlify, or your own server. Borchani never holds your code hostage."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How much does Borchani cost?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Borchani starts free — 5 credits per day, no credit card required. Paid plans: Pro ($19/mo), Business ($49/mo), Premium ($199/mo). Upgrade when you need more credits or team features."
-        }
-      }
-    ]
-  })} />
-
-  <!-- JSON-LD: HowTo (3 steps section) -->
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": "How to build and deploy an app with Borchani",
-    "description": "Build a full-stack web app from a plain-English prompt in 3 steps using Borchani vibe coding platform.",
-    "totalTime": "PT10M",
-    "step": [
-      {
-        "@type": "HowToStep",
-        "position": 1,
-        "name": "Describe your app",
-        "text": "Type your idea like you'd explain it to a developer. Borchani handles architecture, routing, and data models automatically."
-      },
-      {
-        "@type": "HowToStep",
-        "position": 2,
-        "name": "Vibe-check in live preview",
-        "text": "Your app runs in a real browser sandbox. Click through every screen. Refine anything by just asking in plain English."
-      },
-      {
-        "@type": "HowToStep",
-        "position": 3,
-        "name": "Ship it",
-        "text": "One click deploys to a live URL with SSL, CDN, and monitoring. Share it with users, investors, or clients immediately."
-      }
-    ]
-  })} />
-
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'Person',
+          '@id': `${siteUrl}#founder`,
+          name: 'Amanay Yessen',
+          url: founderUrl,
+          sameAs: [founderUrl],
+        },
+        {
+          '@type': 'Organization',
+          '@id': `${siteUrl}#organization`,
+          name: 'Borchani',
+          url: siteUrl,
+          foundingDate: '2026-04-05',
+          founder: { '@id': `${siteUrl}#founder` },
+          sameAs: [githubUrl],
+          contactPoint: { '@type': 'ContactPoint', contactType: 'customer support', email: 'support@borchani.com' },
+        },
+        {
+          '@type': 'WebSite',
+          '@id': `${siteUrl}#website`,
+          name: 'Borchani',
+          url: siteUrl,
+          publisher: { '@id': `${siteUrl}#organization` },
+        },
+        {
+          '@type': 'WebPage',
+          '@id': `${siteUrl}#webpage`,
+          name: metadata.title,
+          url: siteUrl,
+          description,
+          isPartOf: { '@id': `${siteUrl}#website` },
+          about: { '@id': `${siteUrl}#organization` },
+          author: { '@id': `${siteUrl}#founder` },
+        },
+      ],
+    })}
+  />
 </PageLayout>

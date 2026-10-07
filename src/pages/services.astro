@@ -1,280 +1,75 @@
 ---
-import CallToAction from '~/components/widgets/CallToAction.astro';
-import Content from '~/components/widgets/Content.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import Hero from '~/components/widgets/Hero.astro';
-import Testimonials from '~/components/widgets/Testimonials.astro';
+import workspaceImage from '~/assets/images/borchani-workspace-concept.png';
 import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'What Borchani Builds — AI App Generator Capabilities',
-  description:
-    'From SaaS MVPs to internal tools and e-commerce UIs — see everything Borchani can build for you with AI. Production-ready React apps, deployed in minutes.',
+  title: 'What You Can Build with Borchani',
+  description: 'Use Borchani to explore web application ideas, inspect generated code, and iterate in a live preview.',
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
-
-  <Hero
-    tagline="What we build"
-    title="One prompt away from a working app"
-    subtitle="Borchani handles the scaffolding, the boilerplate, the component wiring, and the deployment pipeline. You describe what you need — the AI does the rest."
-    actions={[
-      {
-        variant: 'primary',
-        target: '_blank',
-        text: 'Try it free',
-        href: 'https://app.borchani.com/signup',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Borchani AI builder in action',
-    }}
+  <HeroText
+    tagline="Use cases"
+    title="From a clear request to a web application"
+    subtitle="Borchani helps you describe an application, review the project, and refine the result in one workspace."
   />
-
-  <!-- Features2 Widget ************** -->
-
   <Features2
-    title="App types Borchani generates"
-    subtitle="Tell Borchani what you need. It will generate the frontend, wire up the logic, and have a preview running in under five minutes."
+    title="Ideas to explore"
+    subtitle="Use the workspace to build and iterate on the web tools you need."
     columns={3}
     items={[
       {
-        title: 'SaaS prototypes',
-        description:
-          'Turn your product idea into a working prototype before you invest months in development. Validate early, pivot fast.',
+        title: 'Product prototypes',
+        description: 'Turn a product specification into an application you can review and improve.',
         icon: 'tabler:rocket',
       },
       {
         title: 'Internal tools',
-        description:
-          'Admin panels, approval workflows, data entry forms — the tools teams need but engineering never has time to build.',
+        description: 'Explore dashboards, forms, approval flows, and other interfaces for your team.',
         icon: 'tabler:tool',
       },
       {
-        title: 'E-commerce UIs',
-        description:
-          'Product pages, shopping carts, checkout flows. Complete, responsive storefronts without a single line of manual CSS.',
-        icon: 'tabler:shopping-cart',
-      },
-      {
-        title: 'Dashboards & analytics',
-        description:
-          'Live charts, filterable tables, KPI cards. Hand Borchani a data shape and it builds the interactive interface around it.',
-        icon: 'tabler:chart-bar',
-      },
-      {
-        title: 'AI-powered apps',
-        description:
-          'Chat interfaces, document summarizers, prompt playgrounds — Borchani generates the shell; you plug in your AI models.',
-        icon: 'tabler:robot',
-      },
-      {
-        title: 'Productivity apps',
-        description:
-          'Habit trackers, kanban boards, time managers. Personal tools that would eat a weekend to build by hand.',
-        icon: 'tabler:checkbox',
-      },
-      {
-        title: 'Social features',
-        description:
-          'Comment threads, user feeds, real-time notifications — Borchani generates WebSocket-backed social components out of the box.',
-        icon: 'tabler:users',
-      },
-      {
-        title: 'Client-facing portals',
-        description:
-          'Customer dashboards, status pages, document upload portals. Branded, polished, and ready to deploy.',
+        title: 'Customer portals',
+        description: 'Create and refine client-facing screens, account views, and project workspaces.',
         icon: 'tabler:layout-dashboard',
       },
       {
+        title: 'Data interfaces',
+        description: 'Try charts, tables, filters, and layouts around a data-driven workflow.',
+        icon: 'tabler:chart-bar',
+      },
+      {
         title: 'Landing pages',
-        description:
-          'Fast-loading, SEO-ready marketing pages with clean semantic HTML — no page builder lock-in, just code you own.',
+        description: 'Build a responsive web presence and inspect its structure as you iterate.',
         icon: 'tabler:layout',
       },
+      {
+        title: 'Team experiments',
+        description: 'Test ideas together before committing to a larger build.',
+        icon: 'tabler:users',
+      },
     ]}
   />
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isReversed
-    items={[
-      {
-        title: 'Readable, maintainable code',
-        description:
-          'Borchani does not generate messy spaghetti. Every file follows the same conventions, every component is typed, every function is named clearly.',
-        icon: 'tabler:code',
-      },
-      {
-        title: 'shadcn/ui components built in',
-        description:
-          'Every app comes pre-wired with the full shadcn/ui library — 50+ accessible, customizable components ready to use.',
-        icon: 'tabler:components',
-      },
-      {
-        title: 'Live sandbox preview',
-        description:
-          'See your app running in real time as Borchani generates it. Catch problems early, steer the build through chat.',
-        icon: 'tabler:eye',
-      },
-      {
-        title: 'One-click GitHub export',
-        description:
-          'Push the entire repo to GitHub with a single click. Clean commit history, proper .gitignore, ready for your CI/CD pipeline.',
-        icon: 'tabler:brand-github',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80',
-      alt: 'Borchani code quality',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        The code is actually good
-      </h3>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isAfterContent
-    items={[
-      {
-        title: 'Hours saved per project',
-        description:
-          'No more setting up Vite configs, installing Tailwind, configuring TypeScript paths, or wiring up a router. Borchani handles all of it.',
-        icon: 'tabler:clock',
-      },
-      {
-        title: 'Ship before competitors',
-        description:
-          'The team that validates fastest wins. Borchani compresses weeks of frontend work into a single afternoon.',
-        icon: 'tabler:bolt',
-      },
-      {
-        title: 'No designer required',
-        description:
-          'Borchani generates polished UIs using shadcn/ui and Tailwind. The result looks professional without a single Figma file.',
-        icon: 'tabler:palette',
-      },
-      {
-        title: 'Deploy anywhere',
-        description:
-          'The generated code is standard React + Vite. Deploy to Vercel, Netlify, Cloudflare, AWS, or your own server — your choice.',
-        icon: 'tabler:cloud-upload',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80',
-      alt: 'Development speed with Borchani',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        Why teams switch to Borchani
-      </h3>
-    </Fragment>
-  </Content>
-
-  <!-- Testimonials Widget *********** -->
-
-  <Testimonials
-    title="What developers say"
-    testimonials={[
-      {
-        testimonial:
-          'I shipped an MVP for a client in two days using Borchani. The generated code was clean enough that I could hand it off without rewriting a thing. That has never happened with any other tool.',
-        name: 'James Holloway',
-        job: 'Freelance developer',
-        image: {
-          src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
-          alt: 'James Holloway',
-        },
-      },
-      {
-        testimonial:
-          'Our ops team needed a custom dashboard and the dev backlog was three months deep. I described it to Borchani, iterated for an hour through chat, and had something production-ready by the end of the day.',
-        name: 'Priya Mehta',
-        job: 'Head of Operations, TechScale',
-        image: {
-          src: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
-          alt: 'Priya Mehta',
-        },
-      },
-      {
-        testimonial:
-          "I'm a designer, not a developer. Borchani let me actually build the thing I was designing instead of waiting on engineers. The code it generated was good enough that our backend dev just plugged in the API.",
-        name: 'Carlos Vega',
-        job: 'Product designer, Nomad Labs',
-        image: {
-          src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
-          alt: 'Carlos Vega',
-        },
-      },
-    ]}
-    callToAction={{
-      target: '_blank',
-      text: 'Read more stories',
-      href: '/about',
-      icon: 'tabler:chevron-right',
-    }}
-  />
-
-  <!-- CallToAction Widget *********** -->
-
+  <section class="px-4 pb-16 not-prose">
+    <div class="max-w-6xl mx-auto rounded-2xl border border-gray-200 dark:border-slate-700 overflow-hidden">
+      <img
+        src={workspaceImage.src}
+        width="1672"
+        height="941"
+        loading="lazy"
+        class="w-full h-auto"
+        alt="Illustrative interface of the Borchani workspace, showing instructions, code, and a live preview"
+      />
+      <p class="px-4 py-3 text-sm text-muted dark:text-slate-400">Illustrative view of the workspace.</p>
+    </div>
+  </section>
   <CallToAction
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Start building free',
-        href: 'https://app.borchani.com/signup',
-        target: '_blank',
-      },
-    ]}
-    title="What do you want to build?"
-    subtitle="Describe it. Borchani will have a working preview running before your next meeting."
+    title="Build your next web application"
+    subtitle="Open Borchani and describe what you want to make."
+    actions={[{ variant: 'primary', text: 'Open Borchani', href: 'https://app.borchani.com/build', target: '_blank' }]}
   />
-
-  <!-- JSON-LD: BreadcrumbList -->
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://borchani.com" },
-      { "@type": "ListItem", "position": 2, "name": "What We Build", "item": "https://borchani.com/services" }
-    ]
-  })} />
-
-  <!-- JSON-LD: Service -->
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Borchani AI App Builder",
-    "url": "https://borchani.com/services",
-    "description": "Borchani generates production-ready full-stack React + TypeScript apps from plain-English prompts. SaaS prototypes, internal tools, e-commerce, dashboards, AI apps, and more.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Borchani",
-      "url": "https://borchani.com"
-    },
-    "serviceType": "AI App Development Platform",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "App Types",
-      "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SaaS Prototypes" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Internal Tools" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "E-commerce UIs" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dashboards & Analytics" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI-powered Apps" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Client Portals" } }
-      ]
-    }
-  })} />
 </Layout>

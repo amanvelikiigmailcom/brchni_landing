@@ -1,115 +1,31 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
-import ContactUs from '~/components/widgets/Contact.astro';
-import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = {
-  title: 'Contact Borchani — Get Help or Talk to Sales',
-  description:
-    'Questions about your account, billing, or a custom plan? Reach out — we reply within one business day.',
+  title: 'Contact Borchani',
+  description: 'Contact the Borchani team about product, account, or billing questions.',
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
-
-  <HeroText tagline="Contact" title="We're real people. Just ask." />
-
-  <ContactUs
-    id="form"
-    title="Send us a message"
-    subtitle="Check the FAQ first — you might find your answer faster there. If not, fill in the form and we'll get back to you."
-    inputs={[
-      {
-        type: 'text',
-        name: 'name',
-        label: 'Your name',
-      },
-      {
-        type: 'email',
-        name: 'email',
-        label: 'Work email',
-      },
-    ]}
-    textarea={{
-      label: 'How can we help?',
-    }}
-    disclaimer={{
-      label:
-        'By submitting this form you agree to our Privacy Policy. We will only use your information to respond to your inquiry.',
-    }}
-    description="We typically reply within one business day."
+  <HeroText
+    tagline="Contact"
+    title="Get in touch with Borchani"
+    subtitle="Questions about the workspace, your account, or billing? Email the team directly."
   />
-
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Other ways to reach us"
-    subtitle="We reply to all messages within one business day."
-    items={[
-      {
-        title: 'General questions',
-        description:
-          'Account access, billing, plan changes, or anything else about using Borchani — drop us an email or use the form above.',
-      },
-      {
-        title: 'Enterprise & sales',
-        description:
-          'Looking for a custom plan, higher limits, SLA, or a dedicated account manager? Let us know and we will put together an offer.',
-      },
-      {
-        title: 'Technical issues',
-        description:
-          'If your build is failing, something looks broken, or the generated code has a persistent issue — describe it here and we will dig in.',
-      },
-      {
-        title: 'Discord community',
-        description: 'discord.gg/borchani',
-        icon: 'tabler:brand-discord',
-      },
-      {
-        title: 'Email',
-        description: 'help@borchani.com',
-        icon: 'tabler:mail',
-      },
-      {
-        title: 'Based in',
-        description: 'San Francisco, CA — remote team worldwide',
-        icon: 'tabler:map-pin',
-      },
-    ]}
-  />
-
-  <!-- JSON-LD: BreadcrumbList -->
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://borchani.com" },
-      { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://borchani.com/contact" }
-    ]
-  })} />
-
-  <!-- JSON-LD: ContactPage -->
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "ContactPage",
-    "name": "Contact Borchani",
-    "url": "https://borchani.com/contact",
-    "description": "Get help from the Borchani team. We reply within one business day.",
-    "mainEntity": {
-      "@type": "Organization",
-      "name": "Borchani",
-      "email": "help@borchani.com",
-      "url": "https://borchani.com",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "email": "help@borchani.com",
-        "contactType": "customer support",
-        "areaServed": "Worldwide",
-        "availableLanguage": ["English"]
-      }
-    }
-  })} />
+  <section class="px-4 pb-20 not-prose">
+    <div class="max-w-2xl mx-auto rounded-2xl border border-gray-200 dark:border-slate-700 p-8 text-center">
+      <h2 class="text-2xl font-bold dark:text-white">Email support</h2>
+      <p class="mt-3 text-muted dark:text-slate-300">
+        Send your question to our domain email address. Include your account email if you need help with an existing
+        subscription.
+      </p>
+      <a
+        href="mailto:support@borchani.com"
+        class="inline-flex mt-6 px-6 py-3 rounded-xl bg-primary text-white font-semibold hover:opacity-90"
+        >support@borchani.com</a
+      >
+    </div>
+  </section>
 </Layout>

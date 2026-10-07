@@ -9,16 +9,16 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: Borchani — AI App Builder
+    default: Borchani — AI Workspace for Web Applications
     template: '%s — Borchani'
-  description: "Build full-stack web apps with AI. Describe your idea, get production-ready React + TypeScript code in minutes. Live preview, one-click deploy."
+  description: 'Build and refine web applications with AI. Describe your project, inspect the code, and see changes in a live preview.'
   robots:
     index: true
     follow: true
   openGraph:
     site_name: Borchani
     images:
-      - url: '~/assets/images/default.png'
+      - url: '~/assets/images/borchani-workspace-concept.png'
         width: 1200
         height: 628
     type: website

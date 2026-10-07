@@ -1,264 +1,64 @@
 ---
-import Features2 from '~/components/widgets/Features2.astro';
-import Features3 from '~/components/widgets/Features3.astro';
-import Hero from '~/components/widgets/Hero.astro';
-import Stats from '~/components/widgets/Stats.astro';
-import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
 
+const founderUrl = 'https://www.linkedin.com/in/amanay-yessen-1a1a26188/?locale=en';
+const githubUrl = 'https://github.com/amanvelikiigmailcom/brchni_landing';
 const metadata = {
-  title: 'About Borchani — AI App Builder',
+  title: 'About Borchani — AI Workspace for Web Applications',
   description:
-    'We built Borchani because setting up a new project was eating too much time. Learn about the team, our values, and why we obsess over developer experience.',
-};
-
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://borchani.com" },
-    { "@type": "ListItem", "position": 2, "name": "About", "item": "https://borchani.com/about" }
-  ]
+    'Meet Borchani and founder Amanay Yessen. Learn why we are building an AI workspace for web application development.',
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
-
-  <Hero
-    tagline="About us"
-    image={{
-      src: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Borchani team working',
-    }}
-  >
-    <Fragment slot="title">
-      We got tired of setting up projects from scratch.<br />
-      <span class="text-accent dark:text-white">So we built Borchani.</span>
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      Borchani started with a simple frustration — too much time spent on boilerplate, config, and scaffolding
-      before a single line of real logic got written. We built an AI that handles all of that so developers can
-      spend their time on things that actually matter. Today, thousands of developers use Borchani to turn ideas
-      into running applications in minutes.
-    </Fragment>
-  </Hero>
-
-  <!-- Stats Widget ****************** -->
-
-  <Stats
-    title="Borchani by the numbers"
-    stats={[
-      { title: 'Apps built', amount: '10K+' },
-      { title: 'Developers', amount: '3K+' },
-      { title: 'UI components', amount: '50+' },
-      { title: 'Avg. build time', amount: '< 5 min' },
-    ]}
+  <HeroText
+    tagline="About Borchani"
+    title="A clearer way to build with AI"
+    subtitle="Borchani brings the request, project files, and application preview into one workspace so builders can move from an idea to a working web application."
   />
 
-  <!-- Features3 Widget ************** -->
+  <section class="px-4 py-12 sm:py-16 not-prose">
+    <div class="max-w-4xl mx-auto grid gap-8 md:grid-cols-2">
+      <div class="rounded-2xl border border-gray-200 dark:border-slate-700 p-7">
+        <h2 class="text-2xl font-bold dark:text-white">What we are building</h2>
+        <p class="mt-4 text-muted dark:text-slate-300">
+          Starting a web application should not require switching between a blank editor, a chat window, and a preview.
+          Borchani connects these steps: describe the project, inspect the generated code, and iterate on the result.
+        </p>
+        <p class="mt-4 text-muted dark:text-slate-300">
+          The product is for developers, founders, and product teams who want a visible, editable path from a
+          specification to a working application.
+        </p>
+      </div>
+      <div class="rounded-2xl border border-gray-200 dark:border-slate-700 p-7">
+        <h2 class="text-2xl font-bold dark:text-white">Founder and company</h2>
+        <p class="mt-4 text-muted dark:text-slate-300">
+          Borchani was founded by Amanay Yessen on April 5, 2026 in San Francisco, California. Today the product serves
+          customers building real web applications.
+        </p>
+        <div class="mt-5 flex flex-col gap-3 font-medium text-primary">
+          <a href={founderUrl} target="_blank" rel="noopener noreferrer" class="hover:underline"
+            >Amanay Yessen on LinkedIn ↗</a
+          >
+          <a href={githubUrl} target="_blank" rel="noopener noreferrer" class="hover:underline"
+            >Borchani website repository on GitHub ↗</a
+          >
+          <a href="mailto:support@borchani.com" class="hover:underline">support@borchani.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <Features3
-    title="What people build with Borchani"
-    subtitle="We designed Borchani to be flexible enough for almost any web application — here is what our users ship most often."
-    columns={3}
-    isBeforeContent={true}
-    items={[
-      {
-        title: 'Internal tools',
-        description:
-          'Admin panels, data dashboards, approval workflows — the stuff that keeps companies running but nobody wants to spend weeks building.',
-        icon: 'tabler:tool',
-      },
-      {
-        title: 'SaaS prototypes',
-        description:
-          'Go from idea to clickable, deployable MVP in hours. Validate before you invest months in development.',
-        icon: 'tabler:flask',
-      },
-      {
-        title: 'Client projects',
-        description:
-          'Agencies and freelancers use Borchani to deliver projects faster without cutting corners on code quality.',
-        icon: 'tabler:briefcase',
-      },
-    ]}
-  />
-
-  <!-- Features3 Widget ************** -->
-
-  <Features3
-    columns={3}
-    isAfterContent={true}
-    items={[
-      {
-        title: 'E-commerce UIs',
-        description:
-          'Product catalogs, shopping carts, checkout flows — Borchani generates complete, responsive interfaces.',
-        icon: 'tabler:shopping-cart',
-      },
-      {
-        title: 'AI-powered apps',
-        description:
-          'Chat interfaces, prompt playgrounds, AI dashboards. Borchani handles the plumbing so you focus on the intelligence layer.',
-        icon: 'tabler:robot',
-      },
-      {
-        title: 'Data apps',
-        description:
-          'Charts, filterable tables, KPI boards. Give Borchani your data shape and it builds the full interactive interface.',
-        icon: 'tabler:chart-bar',
-      },
-      {
-        title: 'Productivity tools',
-        description:
-          'Kanban boards, habit trackers, note-taking apps, timers — personal tools that would take a weekend to write by hand.',
-        icon: 'tabler:checkbox',
-      },
-      {
-        title: 'Social features',
-        description:
-          'Comment threads, feeds, real-time chat. Borchani generates complete WebSocket-backed social components.',
-        icon: 'tabler:users',
-      },
-      {
-        title: 'Landing pages',
-        description:
-          'Fast, SEO-ready marketing pages with clear CTAs. No builder lock-in — just clean Astro or React code you own.',
-        icon: 'tabler:layout',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Developer working with Borchani',
-    }}
-  />
-
-  <!-- Steps2 Widget ****************** -->
-
-  <Steps2
-    title="What we stand for"
-    subtitle="Three things we come back to whenever we make a product decision."
-    items={[
-      {
-        title: 'Developer experience first',
-        description:
-          'We are developers ourselves. If something feels annoying to use, we fix it. Generated code should be as readable and maintainable as code written by hand.',
-      },
-      {
-        title: 'Ship fast, fix fast',
-        description:
-          'We release updates every week. When something breaks, we fix it the same day. Speed is part of how we operate — not just what we sell.',
-      },
-      {
-        title: 'You own everything',
-        description:
-          'Your data, your code, your apps. We do not lock you in. Export at any time, deploy anywhere, modify freely. No strings attached.',
-      },
-    ]}
-  />
-
-  <!-- Steps2 Widget ****************** -->
-
-  <Steps2
-    title="A few things we're proud of"
-    subtitle="We're a small team, but the product speaks for itself."
-    isReversed={true}
-    callToAction={{
-      text: 'Start building',
-      href: 'https://app.borchani.com/signup',
-    }}
-    items={[
-      {
-        title: 'Used in 40+ countries',
-        description:
-          'Developers from San Francisco to Singapore use Borchani to ship products faster. We did not expect the adoption to spread this quickly.',
-        icon: 'tabler:globe',
-      },
-      {
-        title: 'Consistently rated 4.9/5',
-        description:
-          'Across review platforms and user surveys, the feedback has been clear: the builder works, the code is clean, and the support is fast.',
-        icon: 'tabler:message-star',
-      },
-      {
-        title: 'Featured in multiple developer publications',
-        description:
-          'Borchani has been covered in several developer newsletters and tech blogs as a standout tool for AI-assisted development.',
-        icon: 'tabler:award',
-      },
-    ]}
-  />
-
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Where we are"
-    tagline="Find us"
-    columns={4}
-    items={[
-      {
-        title: 'Remote first',
-        description: 'Our core team works fully remote, across multiple time zones.',
-      },
-      {
-        title: 'San Francisco',
-        description: 'Company registered in California, USA.',
-      },
-      {
-        title: 'Community',
-        description: 'Discord · GitHub · X (Twitter)',
-      },
-      {
-        title: 'Available 24/7',
-        description: 'App uptime monitored around the clock.',
-      },
-    ]}
-  />
-
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Get in touch"
-    tagline="Contact us"
-    columns={2}
-    items={[
-      {
-        title: 'Chat with us',
-        description:
-          'Join our Discord community to get help from the team and other Borchani users. Usually answered within an hour during business hours.',
-        icon: 'tabler:brand-discord',
-      },
-      {
-        title: 'Email us',
-        description:
-          'Reach out to hello@borchani.com for billing questions, enterprise inquiries, or anything else. We reply within one business day.',
-        icon: 'tabler:mail',
-      },
-    ]}
-  />
-
-  <!-- JSON-LD: Organization -->
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Borchani",
-    "url": "https://borchani.com",
-    "logo": "https://borchani.com/logo-light.png",
-    "foundingDate": "2024",
-    "description": "Borchani is a vibe coding platform that generates production-ready full-stack web apps from plain-English prompts.",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "email": "help@borchani.com",
-      "contactType": "customer support",
-      "availableLanguage": ["English"]
-    },
-    "sameAs": [
-      "https://x.com/borchani"
-    ]
-  })} />
-
-  <!-- JSON-LD: BreadcrumbList -->
-  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <section class="px-4 pb-20 not-prose">
+    <div class="max-w-4xl mx-auto rounded-2xl bg-blue-50 dark:bg-slate-900 p-8 text-center">
+      <h2 class="text-2xl font-bold dark:text-white">See the workspace for yourself</h2>
+      <p class="mt-3 text-muted dark:text-slate-300">Start with a description of the application you want to build.</p>
+      <a
+        href="https://app.borchani.com/build"
+        class="inline-flex mt-6 px-6 py-3 rounded-xl bg-primary text-white font-semibold hover:opacity-90"
+        >Open Borchani</a
+      >
+    </div>
+  </section>
 </Layout>
