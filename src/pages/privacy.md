@@ -44,4 +44,4 @@ We may update this policy when the service or our practices change. The current 
 
 ## Contact
 
-Borchani, founded April 5, 2026 in San Francisco, California. Email: [support@borchani.com](mailto:support@borchani.com).
+Borchani, founded April 5, 2026 as a remote-first company. Email: [support@borchani.com](mailto:support@borchani.com).

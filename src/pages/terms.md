@@ -37,4 +37,4 @@ To the extent allowed by applicable law, Borchani is not responsible for indirec
 
 ## Contact
 
-Borchani was founded April 5, 2026 in San Francisco, California. For account, billing, legal, or service questions, email [support@borchani.com](mailto:support@borchani.com).
+Borchani was founded April 5, 2026 as a remote-first company. For account, billing, legal, or service questions, email [support@borchani.com](mailto:support@borchani.com).
