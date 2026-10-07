@@ -2,7 +2,7 @@
 
 This repository contains the public website for [Borchani](https://borchani.com), an AI-native software engineering and full-stack workspace. The application itself is available at [app.borchani.com](https://app.borchani.com). This repository maintains the public website and blog; application code lives separately.
 
-Borchani was founded by [Amanay Yessen](https://www.linkedin.com/in/amanay-yessen-1a1a26188/?locale=en) on April 5, 2026 in San Francisco, California.
+Borchani was founded by [Amanay Yessen](https://www.linkedin.com/in/amanay-yessen-1a1a26188/?locale=en) on April 5, 2026 as a remote-first company.
 
 ## Local development
 
