@@ -170,6 +170,36 @@ const metadata = {
 
   <!-- Testimonials ******************* -->
 
+  <Content
+    tagline="Case Study 06 (Enterprise)"
+    title="Migrating a legacy monolith to a modern B2B internal portal"
+    items={[
+      {
+        title: 'The Situation',
+        description:
+          'A Fortune 500 finance department relied on an outdated on-premise monolith for invoice reconciliation. Implementing new compliance requirements took up to 6 months due to rigid architecture and a shortage of internal engineers.',
+      },
+      {
+        title: 'What they did',
+        description:
+          'Architects used Borchani to scaffold a secure, isolated microservice B2B portal. Using natural language specifications, they generated a modern React frontend and Node.js backend, seamlessly syncing with their enterprise CI/CD pipeline.',
+      },
+      {
+        title: 'The Result',
+        description:
+          'The initial portal was deployed in just 3 weeks. The team saved over $150,000 in external contractor fees and reduced time-to-market for new financial reporting modules from months to days.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
+      alt: 'Enterprise dashboard and analytics',
+    }}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
   <Testimonials
     title="In their own words"
     testimonials={[

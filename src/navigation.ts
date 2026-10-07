@@ -48,6 +48,7 @@ export function getFooterData(t: Translations, locale: string = 'en') {
         links: [
           { text: t.footer.contactUs, href: `${prefix}/contact` },
           { text: 'Email support', href: 'mailto:support@borchani.com' },
+          { text: 'Contact founder', href: 'mailto:founder@borchani.com' },
         ],
       },
       {

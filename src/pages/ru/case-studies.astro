@@ -186,6 +186,36 @@ const metadata = {
     </Fragment>
   </Content>
 
+  <Content
+    tagline="Кейс 06 (Enterprise)"
+    title="Миграция легаси-монолита и создание внутреннего B2B-портала"
+    items={[
+      {
+        title: 'Ситуация',
+        description:
+          'Финансовый отдел корпоративного клиента (Fortune 500) использовал устаревший локальный монолит для сверки счетов. Внедрение новых требований занимало до 6 месяцев из-за жесткой архитектуры и нехватки инженеров.',
+      },
+      {
+        title: 'Что они сделали',
+        description:
+          'Архитекторы использовали Borchani для создания изолированного микросервисного B2B-портала. Через спецификации в Borchani они сгенерировали безопасный фронтенд на React и Node.js бэкенд, настроив CI/CD для развертывания в корпоративном защищенном облаке.',
+      },
+      {
+        title: 'Результат',
+        description:
+          'Первая версия портала была запущена за 3 недели. Команда сэкономила более $150,000 на подрядчиках и сократила time-to-market для новых финансовых отчетов с месяцев до считанных дней.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
+      alt: 'Enterprise dashboard and analytics',
+    }}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
   <Testimonials
     title="Своими словами"
     testimonials={[
