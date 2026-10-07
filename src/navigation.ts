@@ -1,28 +1,29 @@
 import { getPermalink, getAsset } from './utils/permalinks';
 import type { Translations } from './i18n/schema';
 
-export function getHeaderData(t: Translations, _locale: string) {
+export function getHeaderData(t: Translations, locale: string) {
+  const prefix = locale === 'en' ? '' : `/${locale}`;
   return {
     links: [
       {
         text: t.nav.product,
         links: [
-          { text: t.nav.features, href: '/#features' },
-          { text: t.nav.howItWorks, href: '/#how-it-works' },
-          { text: t.nav.whatWeBuild, href: '/services' },
+          { text: t.nav.features, href: `${prefix}/#features` },
+          { text: t.nav.howItWorks, href: `${prefix}/#how-it-works` },
+          { text: t.nav.whatWeBuild, href: `${prefix}/services` },
         ],
       },
       {
         text: t.nav.pricing,
-        href: '/pricing',
+        href: `${prefix}/pricing`,
       },
       {
         text: t.nav.resources,
         links: [
-          { text: t.nav.blog, href: '/blog' },
-          { text: t.nav.caseStudies, href: '/case-studies' },
-          { text: t.nav.about, href: '/about' },
-          { text: t.nav.contact, href: '/contact' },
+          { text: t.nav.blog, href: `${prefix}/blog` },
+          { text: t.nav.caseStudies, href: `${prefix}/case-studies` },
+          { text: t.nav.about, href: `${prefix}/about` },
+          { text: t.nav.contact, href: `${prefix}/contact` },
         ],
       },
     ],
@@ -30,30 +31,31 @@ export function getHeaderData(t: Translations, _locale: string) {
   };
 }
 
-export function getFooterData(t: Translations, _locale: string = 'en') {
+export function getFooterData(t: Translations, locale: string = 'en') {
+  const prefix = locale === 'en' ? '' : `/${locale}`;
   return {
     links: [
       {
         title: t.footer.productTitle,
         links: [
-          { text: t.footer.features, href: '/#features' },
-          { text: t.footer.howItWorks, href: '/#how-it-works' },
-          { text: t.footer.pricing, href: '/pricing' },
+          { text: t.footer.features, href: `${prefix}/#features` },
+          { text: t.footer.howItWorks, href: `${prefix}/#how-it-works` },
+          { text: t.footer.pricing, href: `${prefix}/pricing` },
         ],
       },
       {
         title: t.footer.supportTitle,
         links: [
-          { text: t.footer.contactUs, href: '/contact' },
+          { text: t.footer.contactUs, href: `${prefix}/contact` },
           { text: 'Email support', href: 'mailto:support@borchani.com' },
         ],
       },
       {
         title: t.footer.companyTitle,
         links: [
-          { text: t.footer.about, href: '/about' },
-          { text: t.footer.blog, href: '/blog' },
-          { text: t.nav.caseStudies, href: '/case-studies' },
+          { text: t.footer.about, href: `${prefix}/about` },
+          { text: t.footer.blog, href: `${prefix}/blog` },
+          { text: t.nav.caseStudies, href: `${prefix}/case-studies` },
           { text: t.footer.privacyPolicy, href: getPermalink('/privacy') },
           { text: t.footer.termsOfService, href: getPermalink('/terms') },
           { text: 'Founder on LinkedIn', href: 'https://www.linkedin.com/in/amanay-yessen-1a1a26188/?locale=en' },

@@ -3,6 +3,8 @@ import workspaceImage from '~/assets/images/borchani-workspace-concept.png';
 import PageLayout from '~/layouts/PageLayout.astro';
 import PromptHero from '~/components/widgets/PromptHero.astro';
 import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Stats from '~/components/widgets/Stats.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
@@ -32,13 +34,13 @@ const faqs = [
   {
     title: 'What is Borchani?',
     description:
-      'Borchani is an AI workspace for creating and refining web applications from natural-language instructions. You can review the project and see the result in a live preview.',
+      'Borchani is an AI-native software engineering and full-stack workspace for developers and product teams. Start with a specification, inspect project files and test in a live preview.',
     icon: 'tabler:chevrons-right',
   },
   {
     title: 'Who is Borchani for?',
     description:
-      'Developers, founders, and product teams use Borchani to explore ideas, build interfaces, and iterate on applications.',
+      'Developers, founders and product teams use Borchani to scaffold and refine full-stack web applications.',
     icon: 'tabler:chevrons-right',
   },
   {
@@ -58,6 +60,54 @@ const faqs = [
 
 <PageLayout metadata={metadata}>
   <PromptHero />
+
+  <Stats
+    stats={[
+      { amount: '4.9/5', title: 'Customer rating' },
+      { amount: '127', title: 'Customer reviews' },
+      { amount: 'Full-stack', title: 'Application workspace' },
+      { amount: 'Live', title: 'Project preview' },
+    ]}
+  />
+
+  <section class="px-4 py-16 sm:py-20 not-prose">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-default dark:text-white">
+          Software projects span more than one file
+        </h2>
+        <p class="mt-4 text-lg text-muted dark:text-slate-400 max-w-2xl mx-auto">
+          Borchani keeps the specification, code and running application in one developer workspace.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-8 text-center">
+        <div class="rounded-2xl border border-red-100 dark:border-red-900/30 bg-red-50/50 dark:bg-red-950/20 p-8">
+          <p class="text-5xl font-extrabold text-red-500 mb-3">01</p>
+          <p class="text-lg font-semibold mb-2 text-default dark:text-white">Specify the application</p>
+          <p class="text-muted dark:text-slate-400 text-sm leading-relaxed">
+            Describe screens, data and behavior in natural language before you build.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-red-100 dark:border-red-900/30 bg-red-50/50 dark:bg-red-950/20 p-8">
+          <p class="text-5xl font-extrabold text-red-500 mb-3">02</p>
+          <p class="text-lg font-semibold mb-2 text-default dark:text-white">Inspect the codebase</p>
+          <p class="text-muted dark:text-slate-400 text-sm leading-relaxed">
+            Follow changes across files, components and routes in a visible project workspace.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-red-100 dark:border-red-900/30 bg-red-50/50 dark:bg-red-950/20 p-8">
+          <p class="text-5xl font-extrabold text-red-500 mb-3">03</p>
+          <p class="text-lg font-semibold mb-2 text-default dark:text-white">Test and refine</p>
+          <p class="text-muted dark:text-slate-400 text-sm leading-relaxed">
+            Use the live preview to evaluate the result and guide the next iteration.
+          </p>
+        </div>
+      </div>
+      <p class="text-center mt-12 text-xl font-semibold text-primary dark:text-blue-400">
+        From specification to running software, in one place.
+      </p>
+    </div>
+  </section>
 
   <section id="workspace" class="px-4 py-16 sm:py-20 not-prose" aria-labelledby="workspace-title">
     <div class="max-w-6xl mx-auto">
@@ -94,8 +144,8 @@ const faqs = [
   <Features
     id="features"
     tagline="Why Borchani"
-    title="Build in one connected workspace"
-    subtitle="Keep the request, project files, and running result together while you iterate."
+    title="AI-native software engineering, from spec to preview"
+    subtitle="Work across application files while keeping the specification and live result in view."
     columns={3}
     items={[
       {
@@ -132,6 +182,43 @@ const faqs = [
     ]}
   />
 
+  <Features2
+    tagline="Built for product teams"
+    title="A workspace for the people shipping software"
+    subtitle="Borchani supports the path from initial requirements to a working web application."
+    items={[
+      {
+        title: 'For developers',
+        description: 'Inspect generated code, iterate on components and validate behavior in a live preview.',
+        icon: 'tabler:code',
+      },
+      {
+        title: 'For founders',
+        description: 'Turn a product specification into a working prototype and refine it with your team.',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'For product teams',
+        description: 'Keep requirements, implementation and visual feedback in one shared workflow.',
+        icon: 'tabler:users',
+      },
+    ]}
+  >
+    <Fragment slot="bg"><div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div></Fragment>
+  </Features2>
+
+  <Testimonials
+    testimonials={[
+      {
+        testimonial:
+          'I launched my SaaS MVP in a weekend. No backend experience, no DevOps. Borchani just handled everything.',
+        name: 'Marco R.',
+        job: 'Founder, Trackflow',
+      },
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  />
+
   <Steps
     id="how-it-works"
     tagline="How it works"
@@ -156,21 +243,23 @@ const faqs = [
   />
 
   <Testimonials
-    title="What builders say"
-    subtitle="Rated 4.9 out of 5 from 127 customer reviews. Here are three builder stories."
     testimonials={[
-      {
-        testimonial:
-          'I launched my SaaS MVP in a weekend. No backend experience, no DevOps. Borchani just handled everything.',
-        name: 'Marco R.',
-        job: 'Founder, Trackflow',
-      },
       {
         testimonial:
           'We replaced a 3-week sprint with a 2-hour Borchani session. The code quality was good enough to ship straight to production.',
         name: 'Aiko T.',
         job: 'Engineering Lead, Stackline',
       },
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  >
+    <Fragment slot="bg"><div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div></Fragment>
+  </Testimonials>
+
+  <Testimonials
+    title="What builders say about Borchani"
+    subtitle="Rated 4.9 out of 5 from 127 customer reviews."
+    testimonials={[
       {
         testimonial:
           'Borchani is the first vibe coding tool where the output is actually maintainable TypeScript. Our devs were happy to take it over.',
@@ -178,6 +267,7 @@ const faqs = [
         job: 'CTO, Novu Labs',
       },
     ]}
+    classes={{ container: 'max-w-3xl' }}
   />
 
   <section class="px-4 py-16 sm:py-20 not-prose" aria-labelledby="founder-title">

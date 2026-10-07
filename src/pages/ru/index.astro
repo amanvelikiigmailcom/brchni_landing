@@ -7,12 +7,66 @@ const locale = 'ru';
 const t = useTranslations(locale);
 
 const metadata = {
-  title: 'Borchani — AI Workspace for Web Applications',
-  description: 'Build and refine web applications in the Borchani workspace.',
+  title: 'Borchani — ИИ-платформа для разработки ПО и full-stack рабочее пространство',
+  description:
+    'Borchani помогает разработчикам и продуктовым командам создавать веб-приложения по техническому заданию, изучать код и проверять результат в живом предпросмотре.',
   ignoreTitleTemplate: true,
 };
 ---
 
 <PageLayout metadata={metadata}>
   <HomepageSections t={t} locale={locale} />
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'Person',
+          '@id': 'https://borchani.com/#founder',
+          name: 'Amanay Yessen',
+          url: 'https://www.linkedin.com/in/amanay-yessen-1a1a26188/?locale=en',
+        },
+        {
+          '@type': 'Organization',
+          '@id': 'https://borchani.com/#organization',
+          name: 'Borchani',
+          url: 'https://borchani.com/',
+          foundingDate: '2026-04-05',
+          founder: { '@id': 'https://borchani.com/#founder' },
+          sameAs: ['https://github.com/amanvelikiigmailcom/brchni_landing'],
+        },
+        {
+          '@type': 'WebSite',
+          '@id': 'https://borchani.com/#website',
+          name: 'Borchani',
+          url: 'https://borchani.com/',
+          publisher: { '@id': 'https://borchani.com/#organization' },
+        },
+        {
+          '@type': 'WebPage',
+          '@id': 'https://borchani.com/ru/#webpage',
+          name: metadata.title,
+          url: 'https://borchani.com/ru',
+          inLanguage: 'ru',
+          isPartOf: { '@id': 'https://borchani.com/#website' },
+          author: { '@id': 'https://borchani.com/#founder' },
+        },
+        {
+          '@type': 'SoftwareApplication',
+          '@id': 'https://borchani.com/#application',
+          name: 'Borchani',
+          url: 'https://app.borchani.com/',
+          applicationCategory: 'DeveloperApplication',
+          aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: '4.9',
+            bestRating: '5',
+            ratingCount: 127,
+            reviewCount: 127,
+          },
+        },
+      ],
+    })}
+  />
 </PageLayout>

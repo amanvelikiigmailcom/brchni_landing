@@ -1,4 +1,14 @@
 ---
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 import workspaceImage from '~/assets/images/borchani-workspace-concept.png';
 import type { Translations } from '~/i18n/schema';
 
@@ -6,62 +16,291 @@ interface Props {
   t: Translations;
   locale?: string;
 }
-const { locale = 'en' } = Astro.props;
-const copy = {
-  ru: {
-    title: 'Создавайте веб-приложения с ИИ',
-    subtitle: 'Опишите задачу, изучите файлы проекта и улучшайте результат в рабочем пространстве Borchani.',
-    action: 'Открыть Borchani',
-    workspace: 'От описания задачи к работающему приложению',
-    note: 'Иллюстрация интерфейса Borchani.',
-    founder: 'Основатель — Аманай Есен. Borchani основан 5 апреля 2026 года в Сан-Франциско, Калифорния.',
-  },
-  es: {
-    title: 'Crea aplicaciones web con IA',
-    subtitle:
-      'Describe tu proyecto, inspecciona los archivos y mejora el resultado en el espacio de trabajo de Borchani.',
-    action: 'Abrir Borchani',
-    workspace: 'De la especificación a una aplicación funcional',
-    note: 'Vista ilustrativa del espacio de trabajo de Borchani.',
-    founder: 'Fundada por Amanay Yessen el 5 de abril de 2026 en San Francisco, California.',
-  },
-  ja: {
-    title: 'AIでウェブアプリを構築',
-    subtitle: 'プロジェクトを説明し、ファイルを確認しながら、Borchaniのワークスペースで改善できます。',
-    action: 'Borchaniを開く',
-    workspace: '仕様から動くアプリへ',
-    note: 'Borchaniワークスペースのイメージ図です。',
-    founder: '創業者はAmanay Yessen。2026年4月5日にカリフォルニア州サンフランシスコで設立。',
-  },
-  ko: {
-    title: 'AI로 웹 앱 만들기',
-    subtitle: '프로젝트를 설명하고 파일을 검토하며 Borchani 작업 공간에서 결과를 개선하세요.',
-    action: 'Borchani 열기',
-    workspace: '명세에서 작동하는 앱까지',
-    note: 'Borchani 작업 공간을 설명하는 이미지입니다.',
-    founder: '창업자 Amanay Yessen. 2026년 4월 5일 미국 캘리포니아주 샌프란시스코에서 설립되었습니다.',
-  },
-};
-const c = copy[locale as keyof typeof copy] ?? copy.ru;
+const { t, locale = 'en' } = Astro.props;
+const prefix = locale === 'en' ? '' : `/${locale}`;
+const ru = locale === 'ru';
+const c = ru
+  ? {
+      hero: 'ИИ-платформа для разработки ПО и full-stack рабочее пространство',
+      subtitle:
+        'Borchani помогает разработчикам и продуктовым командам превращать техническое задание в веб-приложение. Изучайте файлы проекта, проверяйте результат в живом предпросмотре и улучшайте его в одном рабочем пространстве.',
+      note: 'Задача · кодовая база · живой предпросмотр — в одной среде разработки.',
+      features: 'Разработка приложений от задания до работающего кода',
+      featureSubtitle: 'Работайте с файлами проекта и проверяйте результат по мере разработки.',
+      roles: 'Рабочее пространство для команд, создающих ПО',
+      rolesSubtitle: 'Переходите от требований к реализации и проверке результата.',
+      step: 'От технического задания к приложению',
+      stack: 'Проект виден целиком',
+      stackSubtitle: 'Техническое задание, код и предпросмотр связаны в одном рабочем процессе.',
+      image: 'Иллюстрация интерфейса Borchani: панель задания, файлы проекта и живой предпросмотр приложения',
+      figure: 'Иллюстрация рабочего пространства Borchani.',
+      founder: 'Основатель — Аманай Есен. Borchani основан 5 апреля 2026 года в Сан-Франциско, Калифорния.',
+      statsRating: 'Оценка клиентов',
+      statsReviews: 'Отзывы клиентов',
+      statsWorkspace: 'Рабочее пространство',
+      statsPreview: 'Предпросмотр',
+      cta: 'Открыть Borchani',
+    }
+  : {
+      hero: 'AI-Native Software Engineering & Full-Stack Workspace',
+      subtitle:
+        'Borchani helps developers and product teams turn specifications into web applications. Inspect project files, test in a live preview and iterate in one workspace.',
+      note: 'Specification · project files · live preview — one development workspace.',
+      features: 'Build applications from specification to running code',
+      featureSubtitle: 'Work across project files and validate the result as you build.',
+      roles: 'A workspace for teams building software',
+      rolesSubtitle: 'Move from requirements to implementation and preview.',
+      step: 'From specification to application',
+      stack: 'See the whole project',
+      stackSubtitle: 'Keep the specification, code and preview connected in one workflow.',
+      image: 'Illustrative Borchani interface with task panel, project files and live application preview',
+      figure: 'Illustrative view of the Borchani workspace.',
+      founder: 'Founded by Amanay Yessen on April 5, 2026 in San Francisco, California.',
+      statsRating: 'Customer rating',
+      statsReviews: 'Customer reviews',
+      statsWorkspace: 'Application workspace',
+      statsPreview: 'Project preview',
+      cta: 'Open Borchani',
+    };
 ---
 
-<section class="px-4 py-20 sm:py-28 not-prose">
-  <div class="max-w-5xl mx-auto text-center">
-    <h1 class="text-4xl sm:text-6xl font-bold tracking-tight text-default dark:text-white">{c.title}</h1>
-    <p class="mt-6 text-lg sm:text-xl text-muted dark:text-slate-300 max-w-3xl mx-auto">{c.subtitle}</p>
-    <a
-      href="https://app.borchani.com/build"
-      class="inline-flex mt-8 px-6 py-3 rounded-xl bg-primary text-white font-semibold hover:opacity-90">{c.action}</a
-    >
+<Hero
+  actions={[
+    {
+      variant: 'primary',
+      text: c.cta,
+      href: 'https://app.borchani.com/build',
+      target: '_blank',
+      icon: 'tabler:rocket',
+    },
+    { text: t.hero.ctaSecondary, href: '#how-it-works', icon: 'tabler:player-play' },
+  ]}
+  image={{ src: workspaceImage, alt: c.image }}
+>
+  <Fragment slot="title">{c.hero}</Fragment>
+  <Fragment slot="subtitle">{c.subtitle}</Fragment>
+</Hero>
+
+<Note title="Borchani: " description={c.note} />
+
+<Features
+  id="features"
+  tagline={t.features.tagline}
+  title={c.features}
+  subtitle={c.featureSubtitle}
+  items={[
+    {
+      title: t.features.aiCode.title,
+      description: ru
+        ? 'Опишите приложение, затем изучите созданные файлы и код в проекте.'
+        : 'Describe the application, then inspect its files and code in the project.',
+      icon: 'tabler:brain',
+    },
+    {
+      title: t.features.livePreview.title,
+      description: ru
+        ? 'Проверяйте приложение в живом предпросмотре и используйте результат для следующей итерации.'
+        : 'Test the application in a live preview and use the result to guide the next iteration.',
+      icon: 'tabler:eye',
+    },
+    {
+      title: t.features.iteration.title,
+      description: ru
+        ? 'Уточняйте требования и вносите изменения через последовательные инструкции.'
+        : 'Refine requirements and make changes through follow-up instructions.',
+      icon: 'tabler:message-circle',
+    },
+    {
+      title: t.features.stack.title,
+      description: ru
+        ? 'Работайте с компонентами, маршрутами и файлами проекта в единой среде.'
+        : 'Work with components, routes and project files in one environment.',
+      icon: 'tabler:stack-2',
+    },
+    {
+      title: t.features.deploy.title,
+      description: ru
+        ? 'Переходите от просмотра результата к публикации через приложение Borchani.'
+        : 'Move from reviewing the result to publishing through the Borchani app.',
+      icon: 'tabler:cloud-upload',
+    },
+    {
+      title: ru ? 'Контроль разработчика' : 'Developer control',
+      description: ru
+        ? 'Изучайте реализацию и решайте, что изменить перед публикацией.'
+        : 'Review the implementation and decide what to change before publishing.',
+      icon: 'tabler:code',
+    },
+  ]}
+/>
+
+<Steps
+  id="how-it-works"
+  title={c.step}
+  items={[
+    {
+      title: t.steps.step1.title,
+      description: ru
+        ? 'Опишите экраны, пользователей и нужное поведение приложения.'
+        : 'Describe the screens, users and application behavior you need.',
+      icon: 'tabler:message',
+    },
+    {
+      title: t.steps.step2.title,
+      description: ru
+        ? 'Изучите файлы и проверьте работу приложения в предпросмотре.'
+        : 'Inspect project files and test the application in the preview.',
+      icon: 'tabler:code',
+    },
+    {
+      title: t.steps.step3.title,
+      description: ru
+        ? 'Дайте новые инструкции, проверьте результат и повторяйте до достижения цели.'
+        : 'Give follow-up instructions, review the result and repeat until it fits your goal.',
+      icon: 'tabler:rocket',
+    },
+  ]}
+  image={{ src: workspaceImage as unknown as string, alt: c.image }}
+/>
+
+<Content
+  isReversed
+  tagline={t.techStack.tagline}
+  title={c.stack}
+  subtitle={c.stackSubtitle}
+  items={[
+    {
+      title: ru ? 'Единая спецификация' : 'One specification',
+      description: ru
+        ? 'Начните с описания задачи и держите его рядом с проектом.'
+        : 'Start with a task description and keep it alongside the project.',
+    },
+    {
+      title: ru ? 'Видимые файлы' : 'Visible project files',
+      description: ru
+        ? 'Изучайте код, компоненты и структуру приложения.'
+        : 'Inspect code, components and application structure.',
+    },
+    {
+      title: ru ? 'Живая проверка' : 'Live validation',
+      description: ru
+        ? 'Проверяйте приложение в предпросмотре во время итераций.'
+        : 'Check the application in the preview as you iterate.',
+    },
+  ]}
+  image={{ src: workspaceImage as unknown as string, alt: c.image }}
+/>
+
+<section class="px-4 py-8 not-prose max-w-6xl mx-auto">
+  <figure class="overflow-hidden rounded-2xl border border-gray-200 dark:border-slate-700 shadow-xl">
+    <img src={workspaceImage.src} width="1672" height="941" class="w-full h-auto" alt={c.image} loading="lazy" />
+    <figcaption class="px-4 py-3 text-sm text-muted dark:text-slate-400">{c.figure}</figcaption>
+  </figure>
+</section>
+
+<Features2
+  id="use-cases"
+  title={c.roles}
+  subtitle={c.rolesSubtitle}
+  tagline={t.useCases.tagline}
+  items={[
+    {
+      title: ru ? 'Разработчикам' : 'Developers',
+      description: ru
+        ? 'Изучайте код и проверяйте интерфейс приложения в одном месте.'
+        : 'Inspect code and test application interfaces in one place.',
+      icon: 'tabler:code',
+    },
+    {
+      title: ru ? 'Основателям' : 'Founders',
+      description: ru
+        ? 'Превращайте техническое задание в работающий прототип.'
+        : 'Turn a product specification into a working prototype.',
+      icon: 'tabler:rocket',
+    },
+    {
+      title: ru ? 'Продуктовым командам' : 'Product teams',
+      description: ru
+        ? 'Сопоставляйте требования, реализацию и результат.'
+        : 'Connect requirements, implementation and the result.',
+      icon: 'tabler:users',
+    },
+  ]}
+/>
+
+<Stats
+  stats={[
+    { title: c.statsRating, amount: '4.9/5' },
+    { title: c.statsReviews, amount: '127' },
+    { title: c.statsWorkspace, amount: 'Full-stack' },
+    { title: c.statsPreview, amount: 'Live' },
+  ]}
+/>
+
+<FAQs
+  id="faq"
+  title={t.faq.title}
+  subtitle={t.faq.subtitle}
+  items={[
+    {
+      title: t.faq.q1.title,
+      description: ru
+        ? 'Borchani — ИИ-платформа для разработки веб-приложений с видимыми файлами проекта и живым предпросмотром.'
+        : 'Borchani is an AI-native development workspace for web applications with visible project files and a live preview.',
+    },
+    {
+      title: t.faq.q2.title,
+      description: ru
+        ? 'Borchani подходит разработчикам, основателям и продуктовым командам.'
+        : 'Borchani serves developers, founders and product teams.',
+    },
+    {
+      title: t.faq.q3.title,
+      description: ru
+        ? 'Да. Файлы и код проекта доступны для просмотра в рабочем пространстве.'
+        : 'Yes. You can inspect project files and code in the workspace.',
+    },
+    {
+      title: t.faq.q4.title,
+      description: ru
+        ? 'Опишите задачу, изучите созданный проект и уточняйте результат через новые инструкции.'
+        : 'Describe a task, inspect the project and refine it with follow-up instructions.',
+    },
+  ]}
+/>
+
+<section class="px-4 py-16 not-prose">
+  <div
+    class="max-w-4xl mx-auto rounded-2xl border border-gray-200 dark:border-slate-700 bg-blue-50 dark:bg-slate-900 p-8 sm:p-10"
+  >
+    <h2 class="text-2xl sm:text-3xl font-bold dark:text-white">
+      {ru ? 'Основатель Borchani' : 'Built by Amanay Yessen'}
+    </h2>
+    <p class="mt-3 text-muted dark:text-slate-300">{c.founder}</p>
+    <div class="mt-5 flex flex-wrap gap-5 text-primary font-medium">
+      <a href="https://www.linkedin.com/in/amanay-yessen-1a1a26188/?locale=en" rel="noopener noreferrer" target="_blank"
+        >LinkedIn ↗</a
+      ><a href="https://github.com/amanvelikiigmailcom/brchni_landing" rel="noopener noreferrer" target="_blank"
+        >GitHub ↗</a>
+    </div>
   </div>
 </section>
-<section class="px-4 pb-20 not-prose">
-  <div class="max-w-6xl mx-auto">
-    <h2 class="text-3xl sm:text-4xl font-bold text-center mb-8 dark:text-white">{c.workspace}</h2>
-    <figure class="overflow-hidden rounded-2xl border border-gray-200 dark:border-slate-700 shadow-xl">
-      <img src={workspaceImage.src} width="1672" height="941" class="w-full h-auto" alt={c.note} />
-      <figcaption class="px-4 py-3 text-sm text-muted dark:text-slate-400">{c.note}</figcaption>
-    </figure>
-    <p class="mt-10 text-center text-muted dark:text-slate-300">{c.founder}</p>
-  </div>
-</section>
+
+<BlogLatestPosts id="blog" title={t.blog.title} information={t.blog.subtitle} />
+<CallToAction
+  actions={[
+    {
+      variant: 'primary',
+      text: c.cta,
+      href: 'https://app.borchani.com/build',
+      target: '_blank',
+      icon: 'tabler:rocket',
+    },
+    { variant: 'secondary', text: t.cta.secondary, href: `${prefix}/pricing`, icon: 'tabler:currency-dollar' },
+  ]}
+>
+  <Fragment slot="title"
+    >{t.cta.titleLine1} <span class="text-accent dark:text-white">{t.cta.titleHighlight}</span></Fragment
+  >
+  <Fragment slot="subtitle">{c.subtitle}</Fragment>
+</CallToAction>
