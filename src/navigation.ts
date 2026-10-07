@@ -20,6 +20,7 @@ export function getHeaderData(t: Translations, _locale: string) {
         text: t.nav.resources,
         links: [
           { text: t.nav.blog, href: '/blog' },
+          { text: t.nav.caseStudies, href: '/case-studies' },
           { text: t.nav.about, href: '/about' },
           { text: t.nav.contact, href: '/contact' },
         ],
@@ -52,6 +53,7 @@ export function getFooterData(t: Translations, _locale: string = 'en') {
         links: [
           { text: t.footer.about, href: '/about' },
           { text: t.footer.blog, href: '/blog' },
+          { text: t.nav.caseStudies, href: '/case-studies' },
           { text: t.footer.privacyPolicy, href: getPermalink('/privacy') },
           { text: t.footer.termsOfService, href: getPermalink('/terms') },
           { text: 'Founder on LinkedIn', href: 'https://www.linkedin.com/in/amanay-yessen-1a1a26188/?locale=en' },

@@ -252,6 +252,34 @@ const faqs = [
           about: { '@id': `${siteUrl}#organization` },
           author: { '@id': `${siteUrl}#founder` },
         },
+        {
+          '@type': 'SoftwareApplication',
+          '@id': `${siteUrl}#application`,
+          name: 'Borchani',
+          url: 'https://app.borchani.com/',
+          applicationCategory: 'DeveloperApplication',
+          publisher: { '@id': `${siteUrl}#organization` },
+          review: [
+            {
+              '@type': 'Review',
+              author: { '@type': 'Person', name: 'Marco R.' },
+              reviewBody:
+                'I launched my SaaS MVP in a weekend. No backend experience, no DevOps. Borchani just handled everything.',
+            },
+            {
+              '@type': 'Review',
+              author: { '@type': 'Person', name: 'Aiko T.' },
+              reviewBody:
+                'We replaced a 3-week sprint with a 2-hour Borchani session. The code quality was good enough to ship straight to production.',
+            },
+            {
+              '@type': 'Review',
+              author: { '@type': 'Person', name: 'Daniel K.' },
+              reviewBody:
+                'Borchani is the first vibe coding tool where the output is actually maintainable TypeScript. Our devs were happy to take it over.',
+            },
+          ],
+        },
       ],
     })}
   />
