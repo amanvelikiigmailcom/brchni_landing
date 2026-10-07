@@ -206,18 +206,6 @@ const faqs = [
     <Fragment slot="bg"><div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div></Fragment>
   </Features2>
 
-  <Testimonials
-    testimonials={[
-      {
-        testimonial:
-          'I launched my SaaS MVP in a weekend. No backend experience, no DevOps. Borchani just handled everything.',
-        name: 'Marco R.',
-        job: 'Founder, Trackflow',
-      },
-    ]}
-    classes={{ container: 'max-w-3xl' }}
-  />
-
   <Steps
     id="how-it-works"
     tagline="How it works"
@@ -241,34 +229,30 @@ const faqs = [
     ]}
   />
 
-  <Testimonials
-    testimonials={[
-      {
-        testimonial:
-          'We replaced a 3-week sprint with a 2-hour Borchani session. The code quality was good enough to ship straight to production.',
-        name: 'Aiko T.',
-        job: 'Engineering Lead, Stackline',
-      },
-    ]}
-    classes={{ container: 'max-w-3xl' }}
-  >
-    <Fragment slot="bg"><div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div></Fragment>
-  </Testimonials>
 
   <Testimonials
     title="What builders say about Borchani"
     subtitle="Rated 4.9 out of 5 from 127 customer reviews."
     testimonials={[
       {
-        testimonial:
-          'Borchani is the first vibe coding tool where the output is actually maintainable TypeScript. Our devs were happy to take it over.',
+        testimonial: 'I launched my SaaS MVP in a weekend. No backend experience, no DevOps. Borchani just handled everything.',
+        name: 'Marco R.',
+        job: 'Founder, Trackflow',
+      },
+      {
+        testimonial: 'We replaced a 3-week sprint with a 2-hour Borchani session. The code quality was good enough to ship straight to production.',
+        name: 'Aiko T.',
+        job: 'Engineering Lead, Stackline',
+      },
+      {
+        testimonial: 'Borchani is the first vibe coding tool where the output is actually maintainable TypeScript. Our devs were happy to take it over.',
         name: 'Daniel K.',
         job: 'CTO, Novu Labs',
       },
     ]}
-    classes={{ container: 'max-w-3xl' }}
-  />
-
+  >
+    <Fragment slot="bg"><div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div></Fragment>
+  </Testimonials>
   <section class="px-4 py-16 sm:py-20 not-prose" aria-labelledby="founder-title">
     <div
       class="max-w-4xl mx-auto rounded-2xl border border-gray-200 dark:border-slate-700 bg-blue-50 dark:bg-slate-900 p-8 sm:p-10"
