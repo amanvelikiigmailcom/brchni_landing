@@ -48,7 +48,7 @@ export function getFooterData(t: Translations, locale: string = 'en') {
         links: [
           { text: t.footer.contactUs, href: `${prefix}/contact` },
           { text: 'Email support', href: 'mailto:support@borchani.com' },
-          { text: 'Contact founder', href: 'mailto:founder@borchani.com' },
+          { text: 'Contact founder', href: 'mailto:amanay.yessen@borchani.com' },
         ],
       },
       {
@@ -60,6 +60,8 @@ export function getFooterData(t: Translations, locale: string = 'en') {
           { text: t.footer.privacyPolicy, href: getPermalink('/privacy') },
           { text: t.footer.termsOfService, href: getPermalink('/terms') },
           { text: 'Founder on LinkedIn', href: 'https://www.linkedin.com/in/amanay-yessen-1a1a26188/?locale=en' },
+          { text: 'Founder on X', href: 'https://x.com/amanvelikii' },
+          { text: 'Founder on Instagram', href: 'https://instagram.com/yessen_aman' },
           { text: 'Website on GitHub', href: 'https://github.com/amanvelikiigmailcom/brchni_landing' },
         ],
       },
@@ -73,6 +75,16 @@ export function getFooterData(t: Translations, locale: string = 'en') {
         ariaLabel: 'Founder on LinkedIn',
         icon: 'tabler:brand-linkedin',
         href: 'https://www.linkedin.com/in/amanay-yessen-1a1a26188/?locale=en',
+      },
+      {
+        ariaLabel: 'X (Twitter)',
+        icon: 'tabler:brand-x',
+        href: 'https://x.com/amanvelikii',
+      },
+      {
+        ariaLabel: 'Instagram',
+        icon: 'tabler:brand-instagram',
+        href: 'https://instagram.com/yessen_aman',
       },
       {
         ariaLabel: 'Borchani website on GitHub',
