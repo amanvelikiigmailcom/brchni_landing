@@ -13,14 +13,14 @@ const siteUrl = 'https://borchani.com/';
 const founderUrl = 'https://www.linkedin.com/in/amanay-yessen-1a1a26188/?locale=en';
 const githubUrl = 'https://github.com/amanvelikiigmailcom/brchni_landing';
 const description =
-  'Borchani is an AI workspace for building and iterating on web applications. Describe a project, inspect the generated code, and test it in a live preview.';
+  'Borchani is an AI-native software engineering and full-stack workspace. Turn natural language specifications into web applications, inspect code, and test in a live preview.';
 const metadata = {
-  title: 'Borchani — AI Workspace for Building Web Applications',
+  title: 'Borchani — AI-Native Software Engineering & Full-Stack Workspace',
   description,
   ignoreTitleTemplate: true,
   canonical: siteUrl,
   openGraph: {
-    title: 'Borchani — Build Web Applications with AI',
+    title: 'Borchani — AI-Native Software Engineering & Full-Stack Workspace',
     description,
     url: siteUrl,
     type: 'website',
@@ -157,7 +157,7 @@ const faqs = [
 
   <Testimonials
     title="What builders say"
-    subtitle="Feedback from people building with Borchani."
+    subtitle="Rated 4.9 out of 5 from 127 customer reviews. Here are three builder stories."
     testimonials={[
       {
         testimonial:
@@ -259,6 +259,13 @@ const faqs = [
           url: 'https://app.borchani.com/',
           applicationCategory: 'DeveloperApplication',
           publisher: { '@id': `${siteUrl}#organization` },
+          aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: '4.9',
+            bestRating: '5',
+            ratingCount: 127,
+            reviewCount: 127,
+          },
           review: [
             {
               '@type': 'Review',
