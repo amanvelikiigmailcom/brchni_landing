@@ -7,6 +7,10 @@ _Last updated: October 8, 2026_
 
 This policy describes the public website at [borchani.com](https://borchani.com). Borchani is a workspace for building web applications; the public website links to the workspace at [app.borchani.com](https://app.borchani.com). If you have a privacy question about your workspace account or projects, email [support@borchani.com](mailto:support@borchani.com).
 
+## AI models in the workspace
+
+As described on the Borchani homepage, the workspace uses Anthropic's Claude Sonnet and Claude Opus to help create and refine web applications. This describes the workspace, not a request made merely by reading the public website. For questions about information in your account or projects, contact [support@borchani.com](mailto:support@borchani.com).
+
 ## Information involved when you use this website
 
 - **Messages you send us:** if you contact Borchani by email, we receive your email address and the information you choose to include in your message. Do not send passwords, API keys, or payment card numbers by email.
