@@ -1,0 +1,11 @@
+<script is:inline>
+  try {
+    const selectedLanguage = localStorage.getItem('borchani-language');
+    const browserLanguage = navigator.languages?.[0] || navigator.language || 'en';
+    if (selectedLanguage === 'ru' || (!selectedLanguage && browserLanguage.toLowerCase().startsWith('ru'))) {
+      location.replace('/ru' + location.search + location.hash);
+    }
+  } catch {
+    // Keep the English default if language detection is unavailable.
+  }
+</script>

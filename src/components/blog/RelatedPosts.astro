@@ -11,6 +11,7 @@ export interface Props {
 }
 
 const { post } = Astro.props;
+const isRussian = post.permalink.startsWith('ru/');
 
 const relatedPosts = post.tags ? await getRelatedPosts(post, 4) : [];
 ---
@@ -22,9 +23,9 @@ const relatedPosts = post.tags ? await getRelatedPosts(post, 4) : [];
         container:
           'pt-0 lg:pt-0 md:pt-0 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade',
       }}
-      title="Related Posts"
-      linkText="View All Posts"
-      linkUrl={getBlogPermalink()}
+      title={isRussian ? 'Похожие статьи' : 'Related Posts'}
+      linkText={isRussian ? 'Все статьи' : 'View All Posts'}
+      linkUrl={isRussian ? '/ru/blog' : getBlogPermalink()}
       postIds={relatedPosts.map((post) => post.id)}
     />
   ) : null

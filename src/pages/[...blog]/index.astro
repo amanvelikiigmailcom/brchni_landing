@@ -78,7 +78,9 @@ const articleSchema = {
     '@id': String(url),
   },
   ...(post.category ? { articleSection: post.category.title } : {}),
-  ...(post.tags && post.tags.length ? { keywords: post.tags.map((t) => (typeof t === 'string' ? t : t.title)).join(', ') } : {}),
+  ...(post.tags && post.tags.length
+    ? { keywords: post.tags.map((t) => (typeof t === 'string' ? t : t.title)).join(', ') }
+    : {}),
 };
 
 // JSON-LD: BreadcrumbList — Home › Blog › Post
@@ -97,7 +99,7 @@ const breadcrumbSchema = {
   <SinglePost post={{ ...post, image: image }} url={url}>
     {post.Content ? <post.Content /> : <Fragment set:html={post.content || ''} />}
   </SinglePost>
-  <ToBlogLink />
+  <ToBlogLink language={post.permalink.startsWith('ru/') ? 'ru' : 'en'} />
   <RelatedPosts post={post} />
 
   <!-- JSON-LD: BlogPosting (Article) -->

@@ -13,16 +13,9 @@
 /landing/landing/* /landing/:splat 301
 
 /how-to-build-saas-without-coding /blog 301
-/from-idea-to-deployed-app-borchani-walkthrough /blog 301
 /app-building-prompts /blog 301
 /what-is-borchani /blog 301
 /deployment-guide-borchani-to-production /blog 301
 /borchani-vs-nocode-tools /blog 301
-/ai-app-builders-compared-2025 /blog 301
-/build-web-app-without-coding-2025 /blog 301
-/how-developers-ship-faster-with-ai-tools /blog 301
-/prompt-engineering-for-ai-app-builders /blog 301
-/why-internal-tools-should-be-built-with-ai /blog 301
-/webflow-alternative /blog 301
 
 /cursor-vs-copilot /cursor-alternative 301

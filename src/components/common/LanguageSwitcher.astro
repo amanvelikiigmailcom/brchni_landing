@@ -10,8 +10,7 @@ export interface Props {
 const { currentLocale, currentPath } = Astro.props;
 
 function getLocalizedPath(targetLocale: string, path: string): string {
-  // Strip existing locale prefix
-  const withoutLocale = path.replace(/^\/(es|ru|ja|ko)(\/|$)/, '/') || '/';
+  const withoutLocale = path.replace(/\.html$/, '').replace(/^\/ru(?=\/|$)/, '') || '/';
   // English = no prefix, others = /locale/path
   if (targetLocale === 'en') return withoutLocale;
   return `/${targetLocale}${withoutLocale === '/' ? '' : withoutLocale}`;
@@ -37,21 +36,24 @@ function getLocalizedPath(targetLocale: string, path: string): string {
     id="language-switcher-menu"
     class="language-menu hidden absolute right-0 mt-1 w-36 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg z-50 py-1"
   >
-    {SUPPORTED_LOCALES.map((locale) => (
-      <li role="option" aria-selected={locale === currentLocale}>
-        <a
-          href={getLocalizedPath(locale, currentPath)}
-          class:list={[
-            'flex items-center gap-2 px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors',
-            locale === currentLocale
-              ? 'font-semibold text-blue-600 dark:text-blue-400'
-              : 'text-gray-700 dark:text-gray-300',
-          ]}
-        >
-          {LOCALE_LABELS[locale]}
-        </a>
-      </li>
-    ))}
+    {
+      SUPPORTED_LOCALES.map((locale) => (
+        <li role="option" aria-selected={locale === currentLocale}>
+          <a
+            href={getLocalizedPath(locale, currentPath)}
+            data-language={locale}
+            class:list={[
+              'flex items-center gap-2 px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors',
+              locale === currentLocale
+                ? 'font-semibold text-blue-600 dark:text-blue-400'
+                : 'text-gray-700 dark:text-gray-300',
+            ]}
+          >
+            {locale === 'ru' && currentLocale === 'en' ? 'Russian' : LOCALE_LABELS[locale]}
+          </a>
+        </li>
+      ))
+    }
   </ul>
 </div>
 
@@ -60,6 +62,16 @@ function getLocalizedPath(targetLocale: string, path: string): string {
   const menu = document.getElementById('language-switcher-menu');
 
   if (btn && menu) {
+    menu.addEventListener('click', (event) => {
+      const link = (event.target as HTMLElement).closest<HTMLAnchorElement>('a[data-language]');
+      if (link) {
+        try {
+          localStorage.setItem('borchani-language', link.dataset.language || 'en');
+        } catch {
+          // Navigation still works when browser storage is disabled.
+        }
+      }
+    });
     btn.addEventListener('click', () => {
       const isOpen = !menu.classList.contains('hidden');
       menu.classList.toggle('hidden', isOpen);

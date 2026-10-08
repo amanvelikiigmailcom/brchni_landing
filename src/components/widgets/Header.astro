@@ -3,6 +3,7 @@ import { Icon } from 'astro-icon/components';
 import Logo from '~/components/Logo.astro';
 import ToggleTheme from '~/components/common/ToggleTheme.astro';
 import ToggleMenu from '~/components/common/ToggleMenu.astro';
+import LanguageSwitcher from '~/components/common/LanguageSwitcher.astro';
 import Button from '~/components/ui/Button.astro';
 
 import { getHomePermalink } from '~/utils/permalinks';
@@ -74,8 +75,9 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
       <a class="flex items-center" href={getHomePermalink()}>
         <Logo />
       </a>
-      <div class="flex items-center md:hidden">
-        <ToggleMenu />
+      <div class="flex items-center ml-auto md:ml-2">
+        <LanguageSwitcher currentLocale={Astro.currentLocale ?? 'en'} currentPath={currentPath} />
+        <div class="md:hidden"><ToggleMenu /></div>
       </div>
     </div>
     <nav

@@ -12,7 +12,7 @@ export const GET = async () => {
     });
   }
 
-  const posts = await fetchPosts();
+  const posts = (await fetchPosts()).filter((post) => !post.permalink.startsWith('ru/'));
 
   const rss = await getRssString({
     title: `${SITE.name}’s Blog`,

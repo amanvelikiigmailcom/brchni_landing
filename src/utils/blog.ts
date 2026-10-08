@@ -166,17 +166,25 @@ export const findPostsByIds = async (ids: Array<string>): Promise<Array<Post>> =
 };
 
 /** */
-export const findLatestPosts = async ({ count }: { count?: number }): Promise<Array<Post>> => {
+export const findLatestPosts = async ({
+  count,
+  language = 'en',
+}: {
+  count?: number;
+  language?: 'en' | 'ru';
+}): Promise<Array<Post>> => {
   const _count = count || 4;
   const posts = await fetchPosts();
 
-  return posts ? posts.slice(0, _count) : [];
+  return posts.filter((post) => post.permalink.startsWith('ru/') === (language === 'ru')).slice(0, _count);
 };
 
 /** */
 export const getStaticPathsBlogList = async ({ paginate }: { paginate: PaginateFunction }) => {
   if (!isBlogEnabled || !isBlogListRouteEnabled) return [];
-  return paginate(await fetchPosts(), {
+  const posts = await fetchPosts();
+  const enPosts = posts.filter((post) => !post.permalink.startsWith('ru/'));
+  return paginate(enPosts, {
     params: { blog: BLOG_BASE || undefined },
     pageSize: blogPostsPerPage,
   });
@@ -197,7 +205,7 @@ export const getStaticPathsBlogPost = async () => {
 export const getStaticPathsBlogCategory = async ({ paginate }: { paginate: PaginateFunction }) => {
   if (!isBlogEnabled || !isBlogCategoryRouteEnabled) return [];
 
-  const posts = await fetchPosts();
+  const posts = (await fetchPosts()).filter((post) => !post.permalink.startsWith('ru/'));
   const categories = {};
   posts.map((post) => {
     if (post.category?.slug) {
@@ -221,7 +229,7 @@ export const getStaticPathsBlogCategory = async ({ paginate }: { paginate: Pagin
 export const getStaticPathsBlogTag = async ({ paginate }: { paginate: PaginateFunction }) => {
   if (!isBlogEnabled || !isBlogTagRouteEnabled) return [];
 
-  const posts = await fetchPosts();
+  const posts = (await fetchPosts()).filter((post) => !post.permalink.startsWith('ru/'));
   const tags = {};
   posts.map((post) => {
     if (Array.isArray(post.tags)) {
@@ -247,9 +255,10 @@ export const getStaticPathsBlogTag = async ({ paginate }: { paginate: PaginateFu
 export async function getRelatedPosts(originalPost: Post, maxResults: number = 4): Promise<Post[]> {
   const allPosts = await fetchPosts();
   const originalTagsSet = new Set(originalPost.tags ? originalPost.tags.map((tag) => tag.slug) : []);
+  const isRussian = originalPost.permalink.startsWith('ru/');
 
   const postsWithScores = allPosts.reduce((acc: { post: Post; score: number }[], iteratedPost: Post) => {
-    if (iteratedPost.slug === originalPost.slug) return acc;
+    if (iteratedPost.id === originalPost.id || iteratedPost.permalink.startsWith('ru/') !== isRussian) return acc;
 
     let score = 0;
     if (iteratedPost.category && originalPost.category && iteratedPost.category.slug === originalPost.category.slug) {

@@ -14,7 +14,7 @@ import type { Translations } from '~/i18n/schema';
 
 interface Props {
   t: Translations;
-  locale?: string;
+  locale?: 'en' | 'ru';
 }
 const { t, locale = 'en' } = Astro.props;
 const prefix = locale === 'en' ? '' : `/${locale}`;
@@ -294,7 +294,7 @@ const c = ru
   </div>
 </section>
 
-<BlogLatestPosts id="blog" title={t.blog.title} information={t.blog.subtitle} />
+<BlogLatestPosts id="blog" title={t.blog.title} information={t.blog.subtitle} language={locale} />
 <CallToAction
   actions={[
     {

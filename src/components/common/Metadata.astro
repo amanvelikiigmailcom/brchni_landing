@@ -66,11 +66,6 @@ const seoProps: AstroSeoProps = merge(
 
 const finalOpenGraph = await adaptOpenGraphImages(seoProps?.openGraph, Astro.site);
 
-if (!seoProps.twitter) seoProps.twitter = {};
-if (!seoProps.twitter.title && seoProps.title) seoProps.twitter.title = seoProps.title;
-if (!seoProps.twitter.description && seoProps.description) seoProps.twitter.description = seoProps.description;
-if (!seoProps.twitter.image && finalOpenGraph?.images?.length) seoProps.twitter.image = finalOpenGraph.images[0].url;
-
 ---
 
 <AstroSeo {...{ ...seoProps, openGraph: finalOpenGraph }} />
