@@ -229,23 +229,25 @@ const faqs = [
     ]}
   />
 
-
   <Testimonials
     title="What builders say about Borchani"
     subtitle="Rated 4.9 out of 5 from 127 customer reviews."
     testimonials={[
       {
-        testimonial: 'I launched my SaaS MVP in a weekend. No backend experience, no DevOps. Borchani just handled everything.',
+        testimonial:
+          'I launched my SaaS MVP in a weekend. No backend experience, no DevOps. Borchani just handled everything.',
         name: 'Marco R.',
         job: 'Founder, Trackflow',
       },
       {
-        testimonial: 'We replaced a 3-week sprint with a 2-hour Borchani session. The code quality was good enough to ship straight to production.',
+        testimonial:
+          'We replaced a 3-week sprint with a 2-hour Borchani session. The code quality was good enough to ship straight to production.',
         name: 'Aiko T.',
         job: 'Engineering Lead, Stackline',
       },
       {
-        testimonial: 'Borchani is the first vibe coding tool where the output is actually maintainable TypeScript. Our devs were happy to take it over.',
+        testimonial:
+          'Borchani is the first vibe coding tool where the output is actually maintainable TypeScript. Our devs were happy to take it over.',
         name: 'Daniel K.',
         job: 'CTO, Novu Labs',
       },
@@ -262,13 +264,35 @@ const faqs = [
         Built by Amanay Yessen — Software Engineer & Startup Founder
       </h2>
       <p class="mt-3 text-muted dark:text-slate-300">
-        Borchani was founded on April 5, 2026 as a remote-first company. We build tools that help developers and
-        product teams turn application ideas into working software.
+        Borchani was founded on April 5, 2026 as a remote-first company. We build tools that help developers and product
+        teams turn application ideas into working software.
       </p>
       <div class="mt-5 flex flex-wrap gap-5 text-primary font-medium">
+        <a href="mailto:support@borchani.com" class="hover:underline flex items-center gap-1">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-mail"
+            ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+              d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"></path><path
+              d="M3 7l9 6l9 -6"></path></svg
+          >
+          support@borchani.com
+        </a>
         <a href={founderUrl} target="_blank" rel="noopener noreferrer" class="hover:underline">Amanay on LinkedIn ↗</a>
-        <a href="https://x.com/amanvelikii" target="_blank" rel="noopener noreferrer" class="hover:underline">X (Twitter) ↗</a>
-        <a href="https://instagram.com/yessen_aman" target="_blank" rel="noopener noreferrer" class="hover:underline">Instagram ↗</a>
+        <a href="https://x.com/amanvelikii" target="_blank" rel="noopener noreferrer" class="hover:underline"
+          >X (Twitter) ↗</a
+        >
+        <a href="https://instagram.com/yessen_aman" target="_blank" rel="noopener noreferrer" class="hover:underline"
+          >Instagram ↗</a
+        >
         <a href={githubUrl} target="_blank" rel="noopener noreferrer" class="hover:underline"
           >Borchani website on GitHub ↗</a
         >
@@ -284,7 +308,7 @@ const faqs = [
   />
   <CallToAction
     title="Start building with Borchani"
-    subtitle="Open the workspace and describe the app you want to create."
+    subtitle="Open the workspace and describe the app you want to create.<br><br>Need help or have questions? Email us at <a href='mailto:support@borchani.com' class='text-primary hover:underline'>support@borchani.com</a>."
     actions={[{ variant: 'primary', text: 'Open Borchani', href: 'https://app.borchani.com/build', target: '_blank' }]}
   />
 
