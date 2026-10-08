@@ -5,17 +5,10 @@
 /markdown-elements-demo-post /blog 301
 /useful-resources-to-create-websites /blog 301
 
-/ru/blog /blog 301
-/ru/pricing /pricing 301
-/ru/contact /contact 301
-/ru/about /about 301
-/ru/services /services 301
-/ru/case-studies /case-studies 301
 
 /es/* /:splat 301
 /ja/* /:splat 301
 /ko/* /:splat 301
-/ru/* /:splat 301
 
 /landing/landing/* /landing/:splat 301
 
@@ -32,3 +25,4 @@
 /why-internal-tools-should-be-built-with-ai /blog 301
 /webflow-alternative /blog 301
 
+/cursor-vs-copilot /cursor-alternative 301
