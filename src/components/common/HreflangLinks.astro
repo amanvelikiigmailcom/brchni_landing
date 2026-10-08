@@ -4,9 +4,11 @@ import { SITE } from 'astrowind:config';
 const { pathname } = Astro.url;
 const base = SITE?.site ?? 'https://borchani.com';
 
-// Only the homepage currently has full locale variants.
-const homePaths = ['/', '/ru/'];
+// The homepage and privacy policy have full locale variants.
+const homePaths = ['/', '/ru', '/ru/', '/ru.html'];
 const isHomepage = homePaths.includes(pathname);
+const privacyPaths = ['/privacy', '/privacy.html', '/ru/privacy', '/ru/privacy.html'];
+const isPrivacy = privacyPaths.includes(pathname);
 ---
 
 {isHomepage && (
@@ -14,5 +16,13 @@ const isHomepage = homePaths.includes(pathname);
     <link rel="alternate" hreflang="en" href={`${base}`} />
     <link rel="alternate" hreflang="ru" href={`${base}/ru`} />
     <link rel="alternate" hreflang="x-default" href={`${base}`} />
+  </>
+)}
+
+{isPrivacy && (
+  <>
+    <link rel="alternate" hreflang="en" href={`${base}/privacy`} />
+    <link rel="alternate" hreflang="ru" href={`${base}/ru/privacy`} />
+    <link rel="alternate" hreflang="x-default" href={`${base}/privacy`} />
   </>
 )}

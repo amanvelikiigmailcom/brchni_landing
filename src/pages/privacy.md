@@ -1,47 +1,32 @@
 ---
-title: 'Privacy Policy — Borchani'
+title: 'Privacy Policy'
 layout: '~/layouts/MarkdownLayout.astro'
 ---
 
-_Last updated: October 7, 2026_
+_Last updated: October 8, 2026_
 
-Borchani provides an AI-assisted workspace for building web applications at [borchani.com](https://borchani.com) and [app.borchani.com](https://app.borchani.com). This policy explains how information may be handled when you visit the website, contact us, or use the application. For privacy questions or requests, email [support@borchani.com](mailto:support@borchani.com).
+This policy describes the public website at [borchani.com](https://borchani.com). Borchani is a workspace for building web applications; the public website links to the workspace at [app.borchani.com](https://app.borchani.com). If you have a privacy question about your workspace account or projects, email [support@borchani.com](mailto:support@borchani.com).
 
-## Information we process
+## Information involved when you use this website
 
-- **Account and contact information:** details you provide when you create an account, contact support, or manage a subscription, such as your name, email address, and messages.
-- **Project content:** prompts, project files, code, and other material you submit or create in the workspace.
-- **Technical information:** information required to operate and secure the service, such as IP address, device and browser details, timestamps, and diagnostic logs.
-- **Transaction information:** subscription status and payment records needed to administer paid access. Do not send payment card details to support.
+- **Messages you send us:** if you contact Borchani by email, we receive your email address and the information you choose to include in your message. Do not send passwords, API keys, or payment card numbers by email.
+- **Website requests:** the browser sends technical request information, such as an IP address and browser details, to the hosting infrastructure so the page can be delivered and protected.
+- **Browser preferences:** the website saves your selected language and color mode in your browser's local storage. These settings stay in your browser and can be removed by clearing the site's data.
 
-## How we use information
+## How this website uses information
 
-We use this information to provide accounts and project workspaces, process requests, operate paid plans, provide support, maintain security, diagnose errors, and improve the service. Project content is processed to carry out the actions you request in the application.
+We use website request information to deliver and protect the site. We use your selected language and color mode to display the site as you prefer. If you email us, we use your message and address to respond and handle your request.
 
-## Cookies and analytics
+The public website currently does not load a third-party analytics script. It is hosted on Cloudflare Pages, which handles requests needed to deliver the website.
 
-The marketing website does not load a third-party analytics script. Essential browser storage or cookies may be used by the application to maintain sessions and preferences. You can control cookies through your browser, although disabling essential storage may affect sign-in.
+## Links to other services
 
-## Sharing and transfers
+The website links to the Borchani workspace and to external sites such as social profiles and GitHub. Those services may handle information under their own privacy policies. Review their policies before providing information to them.
 
-We do not sell personal information. Information may be processed by infrastructure or payment providers where needed to operate the service and by authorities where legally required. The service is accessible internationally, so information may be processed in countries other than your own, subject to applicable safeguards.
+## Your choices
 
-## Retention and security
+You can change your language and color mode on the website or clear saved preferences in your browser. To ask about information you sent us by email, including a request to access, correct, or delete it, contact [support@borchani.com](mailto:support@borchani.com). We may need to confirm that the request is yours and may need to keep some information where required by law.
 
-We keep information for as long as needed to provide the service, meet legal obligations, resolve disputes, and protect accounts. Retention may vary by data type. We use reasonable technical and organizational measures to protect information, but no internet service can guarantee absolute security.
+## Updates and contact
 
-## Your choices and requests
-
-You can request access to, correction of, or deletion of your personal information by emailing [support@borchani.com](mailto:support@borchani.com). We may need to verify your identity and may retain information when the law or a legitimate operational need requires it.
-
-## Children
-
-Borchani is intended for adults and is not directed to children under 18. If you believe a child has provided personal information, contact us so we can review it.
-
-## Changes
-
-We may update this policy when the service or our practices change. The current version and its update date will be posted on this page.
-
-## Contact
-
-Borchani, founded April 5, 2026 as a remote-first company. Email: [support@borchani.com](mailto:support@borchani.com).
+We may update this page when the website or its practices change. The date above shows when this version was last updated. For privacy questions, email [support@borchani.com](mailto:support@borchani.com).
