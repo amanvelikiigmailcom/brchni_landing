@@ -45,7 +45,8 @@ export default defineConfig({
       filter: (page) => {
         const isApi = page.includes('/api/');
         const is404 = page.includes('/404');
-        return !isApi && !is404;
+        const isTag = page.includes('/tag/');
+        return !isApi && !is404 && !isTag;
       },
     }),
     mdx(),
