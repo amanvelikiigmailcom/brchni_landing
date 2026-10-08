@@ -329,6 +329,7 @@ const faqs = [
           '@id': `${siteUrl}#organization`,
           name: 'Borchani',
           url: siteUrl,
+          logo: `${siteUrl}favicon.ico`,
           foundingDate: '2026-04-05',
           founder: { '@id': `${siteUrl}#founder` },
           sameAs: [githubUrl],
@@ -357,6 +358,12 @@ const faqs = [
           name: 'Borchani',
           url: 'https://app.borchani.com/',
           applicationCategory: 'DeveloperApplication',
+          operatingSystem: 'All',
+          offers: {
+            '@type': 'Offer',
+            price: '0',
+            priceCurrency: 'USD',
+          },
           publisher: { '@id': `${siteUrl}#organization` },
           aggregateRating: {
             '@type': 'AggregateRating',
