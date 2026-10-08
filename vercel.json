@@ -2,12 +2,106 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/astrowind-template-in-depth", "destination": "/borchani-tech-stack-explained", "permanent": true },
-    { "source": "/get-started-website-with-astro-tailwind-css", "destination": "/blog", "permanent": true },
-    { "source": "/how-to-customize-astrowind-to-your-brand", "destination": "/blog", "permanent": true },
-    { "source": "/landing", "destination": "/blog", "permanent": true },
-    { "source": "/markdown-elements-demo-post", "destination": "/blog", "permanent": true },
-    { "source": "/useful-resources-to-create-websites", "destination": "/blog", "permanent": true }
+    {
+      "source": "/astrowind-template-in-depth",
+      "destination": "/borchani-tech-stack-explained",
+      "permanent": true
+    },
+    {
+      "source": "/get-started-website-with-astro-tailwind-css",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/how-to-customize-astrowind-to-your-brand",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/landing",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/markdown-elements-demo-post",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/useful-resources-to-create-websites",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/(ru|es|ja|ko)/blog",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/(ru|es|ja|ko)/pricing",
+      "destination": "/pricing",
+      "permanent": true
+    },
+    {
+      "source": "/(ru|es|ja|ko)/contact",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/(ru|es|ja|ko)/about",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/(ru|es|ja|ko)/services",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/(ru|es|ja|ko)/case-studies",
+      "destination": "/case-studies",
+      "permanent": true
+    },
+    {
+      "source": "/ru/(.*)",
+      "destination": "/$1",
+      "permanent": true
+    },
+    {
+      "source": "/landing/landing/(.*)",
+      "destination": "/$1",
+      "permanent": true
+    },
+    {
+      "source": "/how-to-build-saas-without-coding",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/from-idea-to-deployed-app-borchani-walkthrough",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/app-building-prompts",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/what-is-borchani",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/deployment-guide-borchani-to-production",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/borchani-vs-nocode-tools",
+      "destination": "/blog",
+      "permanent": true
+    }
   ],
   "headers": [
     {

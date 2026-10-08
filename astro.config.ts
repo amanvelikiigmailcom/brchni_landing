@@ -26,7 +26,7 @@ export default defineConfig({
 
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'es', 'ru', 'ja', 'ko'],
+    locales: ['en', 'ru'],
     routing: {
       prefixDefaultLocale: false,
       redirectToDefaultLocale: false,
@@ -37,7 +37,13 @@ export default defineConfig({
     tailwind({
       applyBaseStyles: false,
     }),
-    sitemap(),
+    sitemap({
+      filter: (page) => {
+        const isApi = page.includes('/api/');
+        const is404 = page.includes('/404');
+        return !isApi && !is404;
+      },
+    }),
     mdx(),
     icon({
       include: {

@@ -245,6 +245,7 @@ User-agent: Timpibot
 Allow: /
 
 User-agent: *
+Disallow: /cdn-cgi/
 Allow: /
 
 Sitemap: https://borchani.com/sitemap-index.xml

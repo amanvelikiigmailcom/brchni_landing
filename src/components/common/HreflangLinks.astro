@@ -5,17 +5,14 @@ const { pathname } = Astro.url;
 const base = SITE?.site ?? 'https://borchani.com';
 
 // Only the homepage currently has full locale variants.
-const homePaths = ['/', '/es/', '/ru/', '/ja/', '/ko/'];
+const homePaths = ['/', '/ru/'];
 const isHomepage = homePaths.includes(pathname);
 ---
 
 {isHomepage && (
   <>
     <link rel="alternate" hreflang="en" href={`${base}/`} />
-    <link rel="alternate" hreflang="es" href={`${base}/es/`} />
     <link rel="alternate" hreflang="ru" href={`${base}/ru/`} />
-    <link rel="alternate" hreflang="ja" href={`${base}/ja/`} />
-    <link rel="alternate" hreflang="ko" href={`${base}/ko/`} />
     <link rel="alternate" hreflang="x-default" href={`${base}/`} />
   </>
 )}
