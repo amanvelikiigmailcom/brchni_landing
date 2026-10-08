@@ -78,7 +78,11 @@ const c = ru
   image={{ src: workspaceImage, alt: c.image }}
 >
   <Fragment slot="title">{c.hero}</Fragment>
-  <Fragment slot="subtitle">{c.subtitle}</Fragment>
+  <Fragment slot="subtitle">
+    {c.subtitle}<br /><br />
+    {ru ? 'Есть вопросы? Пишите нам на ' : 'Need help or have questions? Email us at '}
+    <a href="mailto:support@borchani.com" class="text-primary hover:underline font-semibold">support@borchani.com</a>
+  </Fragment>
 </Hero>
 
 <Note title="Borchani: " description={c.note} />
@@ -278,6 +282,10 @@ const c = ru
     </h2>
     <p class="mt-3 text-muted dark:text-slate-300">{c.founder}</p>
     <div class="mt-5 flex flex-wrap gap-5 text-primary font-medium">
+      <a href="mailto:support@borchani.com" class="hover:underline flex items-center gap-1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg>
+        support@borchani.com
+      </a>
       <a href="https://www.linkedin.com/in/amanay-yessen-1a1a26188/?locale=en" rel="noopener noreferrer" target="_blank"
         >LinkedIn ↗</a
       ><a href="https://github.com/amanvelikiigmailcom/brchni_landing" rel="noopener noreferrer" target="_blank"
@@ -302,5 +310,9 @@ const c = ru
   <Fragment slot="title"
     >{t.cta.titleLine1} <span class="text-accent dark:text-white">{t.cta.titleHighlight}</span></Fragment
   >
-  <Fragment slot="subtitle">{c.subtitle}</Fragment>
+  <Fragment slot="subtitle">
+    {c.subtitle}<br /><br />
+    {ru ? 'Есть вопросы? Пишите нам на ' : 'Need help or have questions? Email us at '}
+    <a href="mailto:support@borchani.com" class="text-primary hover:underline font-semibold">support@borchani.com</a>
+  </Fragment>
 </CallToAction>
