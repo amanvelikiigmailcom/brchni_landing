@@ -25,7 +25,7 @@
 - English H1 must read `AI-Native Software Engineering & Full-Stack Workspace`. Position Borchani as a developer-focused, specification-driven full-stack workspace. Describe only product capabilities that can be demonstrated.
 - Keep visible customer reviews and the user-provided `4.9/5` rating from `127` reviews in both visible copy and JSON-LD. Do not use unrelated stock photos as customer portraits. Before an external application, obtain internal evidence and permission to publish each attributed testimonial and the aggregate rating.
 - Founder: Amanay Yessen; LinkedIn: `https://www.linkedin.com/in/amanay-yessen-1a1a26188/?locale=en`. Public website repository: `https://github.com/amanvelikiigmailcom/brchni_landing`. User-supplied founding date and place: April 5, 2026, remote-first. Verify legal entity name and registration before using `Inc.` or asserting legal incorporation.
-- Public contact email: `support@borchani.com`. Ensure it is prominently visible in the `body` (e.g. PromptHero, Founder, CTA) of both English and Russian landing pages for AEO/Crawler verification. Confirm mailbox delivery and that the Claude Console applicant email uses `@borchani.com`.
+- Public contact email: `support@borchani.com`. Confirm mailbox delivery and that the Claude Console applicant email uses `@borchani.com`.
 - Do not delete historical Russian pages or articles. Avoid changing old case studies without preserving their substance. Keep Russian pricing consistent with English pricing and the live app checkout.
 
 ## Verification and remaining work
