@@ -10,7 +10,7 @@ site:
 metadata:
   title:
     default: Borchani — AI Workspace for Web Applications
-    template: '%s — Borchani'
+    template: '%s - Borchani'
   description: 'Build and refine web applications with AI. Describe your project, inspect the code, and see changes in a live preview.'
   robots:
     index: true

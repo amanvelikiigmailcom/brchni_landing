@@ -57,8 +57,6 @@ export function getFooterData(t: Translations, locale: string = 'en') {
           { text: t.footer.about, href: `${prefix}/about` },
           { text: t.footer.blog, href: `${prefix}/blog` },
           { text: t.nav.caseStudies, href: `${prefix}/case-studies` },
-          { text: t.footer.privacyPolicy, href: getPermalink('/privacy') },
-          { text: t.footer.termsOfService, href: getPermalink('/terms') },
           { text: 'Founder on LinkedIn', href: 'https://www.linkedin.com/in/amanay-yessen-1a1a26188/?locale=en' },
           { text: 'Founder on X', href: 'https://x.com/amanvelikii' },
           { text: 'Founder on Instagram', href: 'https://instagram.com/yessen_aman' },
