@@ -23,6 +23,10 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 
 export default defineConfig({
   output: 'static',
+  trailingSlash: 'never',
+  build: {
+    format: 'file',
+  },
 
   i18n: {
     defaultLocale: 'en',
