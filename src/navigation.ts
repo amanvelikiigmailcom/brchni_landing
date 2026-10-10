@@ -65,7 +65,7 @@ export function getFooterData(t: Translations, locale: string = 'en') {
       },
     ],
     secondaryLinks: [
-      { text: t.footer.terms, href: getPermalink('/terms') },
+      { text: t.footer.termsOfService, href: getPermalink('/terms') },
       { text: t.footer.privacyPolicy, href: `${prefix}/privacy` },
     ],
     socialLinks: [
